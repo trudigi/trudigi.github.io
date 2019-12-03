@@ -1,0 +1,19 @@
+[
+	{
+		"nama": "Ekonomis",
+		"deskripsi": "Paket Hemat",
+		"pesanan": {
+			"desain": 1,
+			"revisi": 2,
+			"kilat": false
+		}
+	}, {
+		"nama": "Event Kilat",
+		"deskripsi": "Paket Untuk Persiapan Event Secara Termasuk Poster, Banner, Twibbon dan Standbooth",
+		"pesanan": {
+			"desain": 4,
+			"revisi": 2,
+			"kilat": true
+		}
+	}
+]

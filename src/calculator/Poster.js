@@ -1,60 +1,9 @@
-import React, { Component } from 'react';
-
-class Poster extends Component {
-	constructor() {
-		super();
-
-		this.state = {
-			paket: [
-				{
-					nama: "Ekonomis",
-					deskripsi: "Paket Hemat",
-					pesanan: {
-						desain: 1,
-						revisi: 2,
-						kilat: false,
-					}
-				}, {
-					nama: "Event Kilat",
-					deskripsi: "Paket Untuk Persiapan Event Secara Termasuk Poster, Banner, Twibbon dan Standbooth",
-					pesanan: {
-						desain: 4,
-						revisi: 2,
-						kilat: true,
-					}
-				}
-			],
-			pesanan: {
-				desain: 1,
-				revisi: 2,
-				kilat: false,
-			},
-			harga: 0,
-			durasi: {
-				desain: 0,
-				revisi: 0,
-			}
-		}
-
-	}
-	componentWillMount = () => {
-		this.calculate();
-	}
-	setPesananProp = (e) => {
-		const delta = { [e.target.name]: e.target.name !== 'kilat' ? e.target.value : e.target.checked }
-		this.setState((state) => {
-			const pesanan = state.pesanan
-			return {
-				pesanan: {
-					...pesanan,
-					...delta
-				}
-
-			}
-		})
-		this.calculate();
-	};
-	calculate = () => {
+import React from 'react';
+import BaseCalculator from './BaseCalculator';
+import Paket from './paket/Poster';
+class Poster extends BaseCalculator {
+	listPaket() { return Paket }
+	calculate() {
 		this.setState((state) => {
 			const pesanan = state.pesanan
 			return {
