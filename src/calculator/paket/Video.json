@@ -1,0 +1,19 @@
+[
+	{
+		"nama": "Ekonomis",
+		"deskripsi": "Paket Reguler",
+		"pesanan": {
+			"durasi": 1,
+			"revisi": 2,
+			"kilat": false
+		}
+	}, {
+		"nama": "Kilat",
+		"deskripsi": "Paket Kilat",
+		"pesanan": {
+			"durasi": 1,
+			"revisi": 2,
+			"kilat": true
+		}
+	}
+]

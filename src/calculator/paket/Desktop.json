@@ -1,0 +1,13 @@
+[
+	{
+		"nama": "Minimalis",
+		"deskripsi": "Desktop tanpa Backend untuk CV",
+		"pesanan": {
+			"framework": "pyqt",
+			"database": "mini",
+			"revisi": 2,
+			"kilat": true,
+			"keamanan": false
+		}
+	}
+]

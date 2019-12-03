@@ -16,9 +16,35 @@ code {
   width: 100%;
 }
 
+.calculator-body {
+  display: flex;
+  justify-content: center;
+}
+
+.scheme-group {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.scheme-item {
+  background: transparent;
+  color: white;
+  border: 1px solid grey;
+  margin: 0.1em 0;
+  padding: 0.2em 0;
+  cursor: pointer;
+}
+.scheme-title {
+  font-size: 1.2em;
+}
+
+.scheme-desc {
+  font-size: small;
+}
+
 .control-group {
-  max-width: 400px;
-  margin: auto;
+  width: 400px;
 }
 
 .control-group {
@@ -43,6 +69,12 @@ code {
 .control-item > .input {
   width: 60%;
   display: flex;
+}
+
+.control-item > .input.options {
+  flex-direction: column;
+  font-size: small;
+  align-items: flex-start;
 }
 
 .control-item > .input > *:first-child {

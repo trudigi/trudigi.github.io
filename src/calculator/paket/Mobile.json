@@ -1,0 +1,13 @@
+[
+	{
+		"nama": "Minimalis",
+		"deskripsi": "Aplikasi Android Sederhana",
+		"pesanan": {
+			"framework": "android",
+			"database": "mini",
+			"revisi": 2,
+			"kilat": false,
+			"keamanan": false
+		}
+	}
+]

@@ -19,12 +19,29 @@ class BaseCalculator extends Component {
 		}
 
 	}
-	componentWillMount() {
+	componentDidMount() {
+		this.calculate();
+	}
+	setSchemeProp = (i) => {
+		this.setState((state) => {
+			return {
+				pesanan:  { ...state.paket[i].pesanan },
+			}
+		})
 		this.calculate();
 	}
 	setPesananProp = (e) => {
-		const delta = {
-			[e.target.name]: e.target.name !== 'kilat' ? e.target.value : e.target.checked
+		let delta = {};
+
+		if (e.target.type == 'radio') {
+			// Radio button
+			if (e.target.checked) delta[e.target.name] = e.target.value;
+		} else if (e.target.type == 'checkbox') {
+			// Checkbox
+			delta[e.target.name] = e.target.checked
+		} else {
+			// Regular input
+			delta[e.target.name] = e.target.value
 		}
 		this.setState((state) => {
 			const pesanan = state.pesanan
