@@ -11,3 +11,40 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.calculator-container {
+  width: 100%;
+}
+
+.control-group {
+  max-width: 400px;
+  margin: auto;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.control-item {
+  display: flex;
+  margin: 0.1em 0;
+}
+
+.control-item > .label {
+  width: 40%;
+  font-size: small;
+  padding-right: 1em;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.control-item > .input {
+  width: 60%;
+  display: flex;
+}
+
+.control-item > .input > *:first-child {
+  flex-grow: 1;
+}
