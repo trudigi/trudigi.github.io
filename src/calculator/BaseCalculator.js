@@ -33,10 +33,10 @@ class BaseCalculator extends Component {
 	setPesananProp = (e) => {
 		let delta = {};
 
-		if (e.target.type == 'radio') {
+		if (e.target.type === 'radio') {
 			// Radio button
 			if (e.target.checked) delta[e.target.name] = e.target.value;
-		} else if (e.target.type == 'checkbox') {
+		} else if (e.target.type === 'checkbox') {
 			// Checkbox
 			delta[e.target.name] = e.target.checked
 		} else {
