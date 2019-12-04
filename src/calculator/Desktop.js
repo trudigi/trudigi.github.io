@@ -1,20 +1,20 @@
 import React from 'react';
 import BaseCalculator from './BaseCalculator';
-import Paket from './paket/Web';
+import Paket from './paket/Desktop';
 import { Slider, Checkbox, ListingDuration, ListingPrice, Option, SchemeList } from './PesananWidget';
-import { WebFrameworks, Databases } from './BaseMetrics';
+import { DesktopFrameworks, Databases } from './BaseMetrics';
 
-class Web extends BaseCalculator {
+class Desktop extends BaseCalculator {
 	listPaket() { return Paket }
 	calculate() {
 		this.setState((state) => {
 			const { framework, database, revisi, kilat, keamanan } = state.pesanan
 			return {
 				// eslint-disable-next-line
-				harga: (WebFrameworks[framework].harga + Databases[database].harga * (keamanan ? 2 : 1) + revisi * 50000) * (kilat ? 2 : 1),
+				harga: (DesktopFrameworks[framework].harga + Databases[database].harga * (keamanan ? 2 : 1) + revisi * 50000) * (kilat ? 2 : 1),
 				durasi: {
-					desain: Math.ceil((WebFrameworks[framework].durasi + Databases[database].durasi) / (kilat ? 2 : 1)) + (keamanan ? 7 : 0),
-					revisi: (kilat ? revisi * 3 + 1 : revisi * 7 + 2),
+					desain: Math.ceil((DesktopFrameworks[framework].durasi + Databases[database].durasi) / (kilat ? 2 : 1)) + (keamanan ? 7 : 0),
+					revisi: (2),
 				}
 			}
 		})
@@ -25,11 +25,11 @@ class Web extends BaseCalculator {
 		const durasi = this.state.durasi;
 		return (
 			<div className="calculator-container">
-				<h4 className="calculator-head">Website</h4>
+				<h4 className="calculator-head">Desktop</h4>
 				<div className="calculator-body">
 					<SchemeList list={this.state.paket} event={this.setSchemeProp}/>
 					<form className="control-group">
-						<Option value={pesanan} event={this.setPesananProp} name="framework" label="Framework" options={WebFrameworks} />
+						<Option value={pesanan} event={this.setPesananProp} name="framework" label="Framework" options={DesktopFrameworks} />
 						<Option value={pesanan} event={this.setPesananProp} name="database" label="Database" options={Databases} />
 						<Slider value={pesanan} event={this.setPesananProp} name="revisi" label="Revisi" min="2" max="10" />
 						<Checkbox value={pesanan} event={this.setPesananProp} name="kilat" label="Kilat" />
@@ -44,4 +44,4 @@ class Web extends BaseCalculator {
 	}
 }
 
-export default Web;
+export default Desktop;

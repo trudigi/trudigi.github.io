@@ -1,7 +1,7 @@
 import React from 'react';
 import BaseCalculator from './BaseCalculator';
 import Paket from './paket/Poster';
-import { Slider, Checkbox, Listing, ListingPrice, SchemeList } from './PesananWidget';
+import { Slider, Checkbox, ListingPrice, ListingDuration, SchemeList } from './PesananWidget';
 
 class Poster extends BaseCalculator {
 	listPaket() { return Paket }
@@ -9,7 +9,7 @@ class Poster extends BaseCalculator {
 		this.setState((state) => {
 			const { desain, revisi, kilat } = state.pesanan
 			return {
-				harga: (desain * 10000 * (kilat ? 2 : 1) + revisi * 5000),
+				harga: (desain * 10000 + revisi * 5000) * (kilat ? 2 : 1),
 				durasi: {
 					desain: (kilat ? Math.floor(desain / 2) + 2 : desain + 4),
 					revisi: (kilat ? Math.floor(revisi / 2) + 1 : revisi + 2),
@@ -26,14 +26,14 @@ class Poster extends BaseCalculator {
 				<h4 className="calculator-head">Poster</h4>
 				<div className="calculator-body">
 					<SchemeList list={this.state.paket} event={this.setSchemeProp}/>
-					<div className="control-group">
-						<Slider value={pesanan} event={this.setPesananProp} name="desain" label="Desain" min="1" max="10" />
-						<Slider value={pesanan} event={this.setPesananProp} name="revisi" label="Revisi" min="2" max="5" />
-						<Checkbox value={pesanan} event={this.setPesananProp} name="kilat" label="Kilat" />
+					<form className="control-group">
+						<Slider value={pesanan} event={this.setPesananProp} name="desain" min="1" max="10" />
+						<Slider value={pesanan} event={this.setPesananProp} name="revisi" min="2" max="5" />
+						<Checkbox value={pesanan} event={this.setPesananProp} name="kilat" />
 						<ListingPrice value={this.state.harga} label="Harga" />
-						<Listing value={`${durasi.desain - 1}-${durasi.desain + 1} Hari`} label="Waktu Pengerjaan" />
-						<Listing value={`${durasi.revisi - 1}-${durasi.revisi + 1} Hari`} label="Durasi Revisi" />
-					</div>
+						<ListingDuration value={durasi.desain} label="Waktu Pengerjaan" />
+						<ListingDuration value={durasi.revisi} label="Durasi Revisi" />
+					</form>
 				</div>
 			</div>
 		);

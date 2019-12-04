@@ -1,8 +1,17 @@
 import React from 'react'
-
-function Slider({value, event, name, label, min, max}) {
+import BaseLabels from './BaseLabels'
+function Label({name}) {
+	console.log(name);
+	const label = BaseLabels[name];
+	if (label)
+		return <span className="label" data-balloon-pos="down" data-balloon-length="large"
+			aria-label={label.highlight+"\n\n"+label.deskripsi}>{label.nama}</span>
+	else
+		return <span className="label">{name}</span>
+}
+function Slider({value, event, name, min, max}) {
 	return (<div className="control-item">
-		<span className="label">{label}</span>
+		<Label name={name}/>
 		<span className="input">
 			<input name={name} type="range" min={min} max={max}
 				value={value[name]} onChange={event} />
@@ -13,9 +22,9 @@ function Slider({value, event, name, label, min, max}) {
 }
 
 
-function Option({value, event, name, label, options}) {
+function Option({value, event, name, options}) {
 	return (<div className="control-item">
-		<span className="label">{label}</span>
+		<Label name={name}/>
 		<span className="input options">
 			{
 				Object.keys(options).map(key => (
@@ -27,7 +36,7 @@ function Option({value, event, name, label, options}) {
 					</label>
 				))
 			}
-			<div>
+			<div className="hint">
 				{
 					options[value[name]] && options[value[name]].deskripsi
 				}
@@ -38,7 +47,7 @@ function Option({value, event, name, label, options}) {
 
 function Checkbox({value, event, name, label}) {
 	return (<div className="control-item">
-		<span className="label">{label}</span>
+		<Label name={name}/>
 		<span className="input">
 			<input name={name} type="checkbox" value={value[name]} onChange={event}/>
 		</span>
@@ -47,18 +56,25 @@ function Checkbox({value, event, name, label}) {
 
 function Listing({value, label}) {
 	return (<div className="control-item">
-		<span className="label">{label}</span>
+		<Label name={label}/>
 		<span className="listing">{value}</span>
 	</div>)
 }
 
 function ListingPrice({value, label}) {
 	return (<div className="control-item">
-		<span className="label">{label}</span>
+		<Label name={label}/>
 		<span className="listing">{value.toLocaleString('id-ID', {
 							style: 'currency',
 							currency: 'IDR',
 						})}</span>
+	</div>)
+}
+
+function ListingDuration({value, label}) {
+	return (<div className="control-item">
+		<Label name={label}/>
+		<span className="listing">{`${value - 1}-${value + 1} Hari`}</span>
 	</div>)
 }
 
@@ -75,4 +91,4 @@ function SchemeList({list, event}) {
 	</div>)
 }
 
-export { Slider, Checkbox, Listing, ListingPrice, Option, SchemeList }
+export { Slider, Checkbox, Listing, ListingPrice, Option, SchemeList, ListingDuration }

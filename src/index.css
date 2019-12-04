@@ -66,6 +66,10 @@ code {
   justify-content: flex-end;
 }
 
+.control-item > .input .hint {
+  color: lightblue;
+  height: 4em;
+}
 .control-item > .input {
   width: 60%;
   display: flex;
@@ -79,4 +83,7 @@ code {
 
 .control-item > .input > *:first-child {
   flex-grow: 1;
+}
+[aria-label][data-balloon-pos][data-balloon-length="large"]:after {
+  white-space: pre-wrap !important;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import Poster from './calculator/Poster';
 import Web from './calculator/Web';
+import Desktop from './calculator/Desktop';
 import './App.css';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
 
         <Poster/>
         <Web/>
+        <Desktop/>
 
       </header>
     </div>

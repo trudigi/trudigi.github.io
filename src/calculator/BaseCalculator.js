@@ -29,6 +29,7 @@ class BaseCalculator extends Component {
 			}
 		})
 		this.calculate();
+		return false;
 	}
 	setPesananProp = (e) => {
 		let delta = {};
@@ -39,6 +40,9 @@ class BaseCalculator extends Component {
 		} else if (e.target.type === 'checkbox') {
 			// Checkbox
 			delta[e.target.name] = e.target.checked
+		} else if (e.target.type === 'range' || e.target.type === 'number') {
+			// Number input
+			delta[e.target.name] = Number(e.target.value)
 		} else {
 			// Regular input
 			delta[e.target.name] = e.target.value
