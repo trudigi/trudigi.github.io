@@ -10,7 +10,7 @@
 			"keamanan": false
 		}
 	}, {
-		"nama": "Sistem Mini",
+		"nama": "Regular",
 		"deskripsi": "Website dengan Login User-Admin",
 		"pesanan": {
 			"framework": "php",
@@ -18,16 +18,6 @@
 			"revisi": 3,
 			"kilat": false,
 			"keamanan": false
-		}
-	}, {
-		"nama": "Bisnis",
-		"deskripsi": "Website Skala Besar",
-		"pesanan": {
-			"framework": "php",
-			"database": "complex",
-			"revisi": 5,
-			"kilat": false,
-			"keamanan": true
 		}
 	}, {
 		"nama": "Modern",
@@ -38,6 +28,26 @@
 			"revisi": 2,
 			"kilat": false,
 			"keamanan": false
+		}
+	}, {
+		"nama": "Bisnis",
+		"deskripsi": "Website CMS Skala Besar",
+		"pesanan": {
+			"framework": "php",
+			"database": "complex",
+			"revisi": 5,
+			"kilat": false,
+			"keamanan": true
+		}
+	}, {
+		"nama": "Survey",
+		"deskripsi": "Website CMS Untuk Pengumpulan Data Skala Besar",
+		"pesanan": {
+			"framework": "php",
+			"database": "mega",
+			"revisi": 7,
+			"kilat": true,
+			"keamanan": true
 		}
 	}
 ]

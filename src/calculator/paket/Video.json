@@ -1,19 +1,39 @@
 [
 	{
 		"nama": "Ekonomis",
-		"deskripsi": "Paket Reguler",
+		"deskripsi": "Video Edit Reguler",
 		"pesanan": {
-			"durasi": 1,
+			"editing": "simple",
+			"length": 2,
 			"revisi": 2,
 			"kilat": false
 		}
 	}, {
-		"nama": "Kilat",
-		"deskripsi": "Paket Kilat",
+		"nama": "After Movie",
+		"deskripsi": "Video Post Event",
 		"pesanan": {
-			"durasi": 1,
-			"revisi": 2,
+			"editing": "composition",
+			"length": 5,
+			"revisi": 3,
 			"kilat": true
+		}
+	}, {
+		"nama": "Trailer",
+		"deskripsi": "Video Trailer untuk Event Besar",
+		"pesanan": {
+			"editing": "tracking",
+			"length": 2,
+			"revisi": 3,
+			"kilat": true
+		}
+	}, {
+		"nama": "Ignition",
+		"deskripsi": "Video kombinasi model 3D untuk visualisasi ide",
+		"pesanan": {
+			"editing": "live",
+			"length": 2,
+			"revisi": 5,
+			"kilat": false
 		}
 	}
 ]

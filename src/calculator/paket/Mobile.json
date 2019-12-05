@@ -9,5 +9,25 @@
 			"kilat": false,
 			"keamanan": false
 		}
+	}, {
+		"nama": "Regular",
+		"deskripsi": "Aplikasi Android untuk Umum",
+		"pesanan": {
+			"framework": "android",
+			"database": "regular",
+			"revisi": 3,
+			"kilat": false,
+			"keamanan": true
+		}
+	}, {
+		"nama": "Modern",
+		"deskripsi": "Aplikasi Mobile Modern",
+		"pesanan": {
+			"framework": "ionic",
+			"database": "mini",
+			"revisi": 3,
+			"kilat": false,
+			"keamanan": true
+		}
 	}
 ]

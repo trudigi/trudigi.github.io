@@ -1,10 +1,38 @@
 [
 	{
-		"nama": "Minimalis",
-		"deskripsi": "Media Interaktif Sederhana",
+		"nama": "Powerpoint",
+		"deskripsi": "Slide untuk Presentasi Materi",
+		"pesanan": {
+			"framework": "powerpoint",
+			"interactivity": "simple",
+			"revisi": 2,
+			"kilat": true
+		}
+	}, {
+		"nama": "Media Flash",
+		"deskripsi": "Media Interaktif Flash",
 		"pesanan": {
 			"framework": "flash",
-			"revisi": 2,
+			"interactivity": "click",
+			"revisi": 3,
+			"kilat": false
+		}
+	}, {
+		"nama": "Game Arcade",
+		"deskripsi": "Game dengan Gameplay sederhana",
+		"pesanan": {
+			"framework": "construct",
+			"interactivity": "game",
+			"revisi": 3,
+			"kilat": false
+		}
+	}, {
+		"nama": "Storyboard Platformer",
+		"deskripsi": "Game Platformer berbasis cerita",
+		"pesanan": {
+			"framework": "unity",
+			"interactivity": "storyboard",
+			"revisi": 5,
 			"kilat": false
 		}
 	}

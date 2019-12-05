@@ -15,10 +15,24 @@ const props = {
 		highlight: "Ukuran database yang anda gunakan",
 		deskripsi: "Kerumitan aplikasi bergantung pada ukuran database yang dimanipulasi. Semakin rumit maka semakin lama (dan mahal), jadi pilihlah sesuai kebutuhan."
 	},
+	interactivity: {
+		nama: "Level Interaksi",
+		highlight: "Ukuran interaksi yang ingin diterapkan",
+		deskripsi: "Ini mendeskripsikan Kerumitan media bergantung pada tujuan dan budget anda."
+	},
+	editing: {
+		nama: "Level Editing",
+		highlight: "Butuh yang tinggal install langsung pakai?",
+		deskripsi: "Jika anda ingin menyebarkan software ke umum, kami bisa buatkan installer sehingga bisa langsung pakai"
+	},
+	length: {
+		nama: "Panjang Durasi",
+		highlight: "Target durasi video dalam menit",
+	},
 	revisi: {
 		nama: "Revisi",
 		highlight: "Jumlah revisi yang bisa diajukan setelah tiap submission",
-		deskripsi: "Jika permintaan revisimu melebihi batas, maka freelancer berhak menaikkan harga dengan pengingat halus"
+		deskripsi: "Jika permintaan revisimu melebihi batas, maka kami berhak menaikkan harga dengan pengingat halus"
 	},
 	kilat: {
 		nama: "Kilat",

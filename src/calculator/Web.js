@@ -11,9 +11,11 @@ class Web extends BaseCalculator {
 			const { framework, database, revisi, kilat, keamanan } = state.pesanan
 			return {
 				// eslint-disable-next-line
-				harga: (WebFrameworks[framework].harga + Databases[database].harga * (keamanan ? 2 : 1) + revisi * 50000) * (kilat ? 2 : 1),
+				harga: (WebFrameworks[framework].harga + Databases[database].harga *
+						(keamanan ? 2 : 1) + revisi * 50000) * (kilat ? 2 : 1),
 				durasi: {
-					desain: Math.ceil((WebFrameworks[framework].durasi + Databases[database].durasi) / (kilat ? 2 : 1)) + (keamanan ? 7 : 0),
+					desain: Math.floor((WebFrameworks[framework].durasi +
+						Databases[database].durasi) / (kilat ? 2 : 1)) + (keamanan ? 7 : 0),
 					revisi: (kilat ? revisi * 3 + 1 : revisi * 7 + 2),
 				}
 			}
@@ -29,11 +31,11 @@ class Web extends BaseCalculator {
 				<div className="calculator-body">
 					<SchemeList list={this.state.paket} event={this.setSchemeProp}/>
 					<form className="control-group">
-						<Option value={pesanan} event={this.setPesananProp} name="framework" label="Framework" options={WebFrameworks} />
-						<Option value={pesanan} event={this.setPesananProp} name="database" label="Database" options={Databases} />
-						<Slider value={pesanan} event={this.setPesananProp} name="revisi" label="Revisi" min="2" max="10" />
-						<Checkbox value={pesanan} event={this.setPesananProp} name="kilat" label="Kilat" />
-						<Checkbox value={pesanan} event={this.setPesananProp} name="keamanan" label="Keamanan" />
+						<Option value={pesanan} event={this.setPesananProp} name="framework" options={WebFrameworks} />
+						<Option value={pesanan} event={this.setPesananProp} name="database" options={Databases} />
+						<Slider value={pesanan} event={this.setPesananProp} name="revisi" min="2" max="10" />
+						<Checkbox value={pesanan} event={this.setPesananProp} name="kilat" />
+						<Checkbox value={pesanan} event={this.setPesananProp} name="keamanan" />
 						<ListingPrice value={this.state.harga} label="Harga" />
 						<ListingDuration value={durasi.desain} label="Waktu Pengerjaan" />
 						<ListingDuration value={durasi.revisi} label="Durasi Revisi" />

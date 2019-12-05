@@ -45,11 +45,11 @@ function Option({value, event, name, options}) {
 	</div>)
 }
 
-function Checkbox({value, event, name, label}) {
+function Checkbox({value, event, name}) {
 	return (<div className="control-item">
 		<Label name={name}/>
 		<span className="input">
-			<input name={name} type="checkbox" value={value[name]} onChange={event}/>
+			<input name={name} type="checkbox" checked={value[name] === true} onChange={event}/>
 		</span>
 	</div>)
 }
@@ -72,9 +72,10 @@ function ListingPrice({value, label}) {
 }
 
 function ListingDuration({value, label}) {
+	const range = Math.ceil(Math.sqrt(value / 5));
 	return (<div className="control-item">
 		<Label name={label}/>
-		<span className="listing">{`${value - 1}-${value + 1} Hari`}</span>
+		<span className="listing">{`${value - range}-${value + range} Hari`}</span>
 	</div>)
 }
 

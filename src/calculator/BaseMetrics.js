@@ -45,14 +45,14 @@ const MediaFrameworks = {
 	'powerpoint': {
 		nama: "Powerpoint",
 		deskripsi: "Media Interaktif untuk navigasi konten sederhana",
-		harga: 50000,
+		harga: 40000,
 		durasi: 7
 	},
 	'construct': {
 		nama: "Construct",
 		deskripsi: "Media Interaktif untuk 2D dengan Gameplay sederhana",
 		harga: 100000,
-		durasi: 14
+		durasi: 10
 	},
 	'flash': {
 		nama: "Flash/Animate CC",
@@ -86,25 +86,25 @@ const MobileFrameworks = {
 const Databases = {
 	'none': {
 		nama: "Tanpa Database",
-		deskripsi: "Website statis tanpa ada data masuk/keluar",
+		deskripsi: "Software statis tanpa ada data masuk/keluar",
 		harga: 0,
 		durasi: 0
 	},
 	'mini': {
 		nama: "Mini",
-		deskripsi: "Database dengan 1-3 tabel cocok untuk website login admin atau mengumpulkan survey sederhana",
+		deskripsi: "Database dengan 1-3 tabel cocok untuk software dengan login admin atau mengumpulkan data sederhana",
 		harga: 50000,
 		durasi: 2,
 	},
 	'regular': {
 		nama: "Regular",
-		deskripsi: "Database dengan 3-7 tabel cocok untuk website dengan login admin dan pengguna",
+		deskripsi: "Database dengan 3-7 tabel cocok untuk software lengkap dengan login admin dan pengguna",
 		harga: 100000,
 		durasi: 7,
 	},
 	'complex': {
 		nama: "Kompleks",
-		deskripsi: "Database kompleks untuk website yang mengelola beragam jenis konten dan pengguna.",
+		deskripsi: "Database kompleks untuk software yang mengelola beragam jenis konten dan pengguna.",
 		harga: 400000,
 		durasi: 14,
 	},
@@ -116,4 +116,73 @@ const Databases = {
 	},
 }
 
-export { WebFrameworks, DesktopFrameworks, MediaFrameworks, MobileFrameworks, Databases }
+const MediaInteractivity = {
+	'simple': {
+		nama: "Sederhana",
+		deskripsi: "Navigasi slide dengan animasi sederhana, selebihnya konten statis",
+		harga: 10000,
+		durasi: 0
+	},
+	'click': {
+		nama: "Tombol",
+		deskripsi: "Navigasi konten dengan klik, seperti link menu dan kuis multiple choice",
+		harga: 50000,
+		durasi: 2,
+	},
+	'game': {
+		nama: "Permainan",
+		deskripsi: "Navigasi konten dengan permainan interaktif, seperti game arcade maupun platformer",
+		harga: 200000,
+		durasi: 7,
+	},
+	'storyboard': {
+		nama: "Storyboard",
+		deskripsi: "Progress level dengan interaksi intuitif, termasuk menyisipkan cerita di setiap jeda level",
+		harga: 500000,
+		durasi: 15,
+	},
+	'mega': {
+		nama: "Studio",
+		deskripsi: "Konten kustom atau super kompleks dengan fokus pada grafis dan pembawaan storyboard game",
+		harga: 2000000,
+		durasi: 45,
+	},
+}
+
+const VideoEditing = {
+	'simple': {
+		nama: "Sederhana",
+		deskripsi: "Potong dan Sambung Video dengan transisi sederhana",
+		harga: 20000,
+		multi: 5000,
+		durasi: 7,
+		sprint: 1,
+	},
+	'composition': {
+		nama: "Komposisi Fx",
+		deskripsi: "Komposisi Gambar dan Video termasuk color-tuning video dan transisi intuitif",
+		harga: 50000,
+		multi: 10000,
+		durasi: 14,
+		sprint: 2,
+	},
+	'tracking': {
+		nama: "Tracking Fx",
+		deskripsi: "Tambahkan elemen grafis dan FX yang melibatkan objek tracking",
+		harga: 150000,
+		multi: 20000,
+		durasi: 21,
+		sprint: 4,
+	},
+	'live': {
+		nama: "Live Action",
+		deskripsi: "Editing video yang melibatkan karakter atau objek 3D dinamis",
+		harga: 400000,
+		multi: 50000,
+		durasi: 21,
+		sprint: 5,
+	}
+}
+
+export { WebFrameworks, DesktopFrameworks, MediaFrameworks,
+	MobileFrameworks, Databases, MediaInteractivity, VideoEditing }
