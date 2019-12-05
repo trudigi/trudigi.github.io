@@ -1,7 +1,7 @@
 import React from 'react';
 import BaseCalculator from './BaseCalculator';
 import Paket from './paket/Mobile';
-import { Slider, Checkbox, ListingDuration, ListingPrice, Option, SchemeList } from './PesananWidget';
+import { Slider, Checkbox, ListingDuration, ListingPrice, Option, Submit } from './BaseWidget';
 import { MobileFrameworks, Databases } from './BaseMetrics';
 
 class Mobile extends BaseCalculator {
@@ -22,26 +22,30 @@ class Mobile extends BaseCalculator {
 		})
 	};
 
-	render() {
+
+
+	konten() {
+		return {
+			title: "Aplikasi Mobile",
+			deskripsi: "Pembuatan Aplikasi untuk Perangkat Mobile",
+			color: "hsl(300, 100%, 20%)",
+		}
+	}
+	renderControls() {
 		const pesanan = this.state.pesanan;
 		const durasi = this.state.durasi;
 		return (
-			<div className="calculator-container">
-				<h4 className="calculator-head">Mobile</h4>
-				<div className="calculator-body">
-					<SchemeList list={this.state.paket} event={this.setSchemeProp}/>
-					<form className="control-group">
-						<Option value={pesanan} event={this.setPesananProp} name="framework" options={MobileFrameworks} />
-						<Option value={pesanan} event={this.setPesananProp} name="database" options={Databases} />
-						<Slider value={pesanan} event={this.setPesananProp} name="revisi" min="2" max="10" />
-						<Checkbox value={pesanan} event={this.setPesananProp} name="kilat" />
-						<Checkbox value={pesanan} event={this.setPesananProp} name="keamanan" />
-						<ListingPrice value={this.state.harga} label="Harga" />
-						<ListingDuration value={durasi.desain} label="Waktu Pengerjaan" />
-						<ListingDuration value={durasi.revisi} label="Durasi Revisi" />
-					</form>
-				</div>
-			</div>
+			<form className="control-group">
+				<Option value={pesanan} event={this.setPesananProp} name="framework" options={MobileFrameworks} />
+				<Option value={pesanan} event={this.setPesananProp} name="database" options={Databases} />
+				<Slider value={pesanan} event={this.setPesananProp} name="revisi" min="2" max="10" />
+				<Checkbox value={pesanan} event={this.setPesananProp} name="kilat" />
+				<Checkbox value={pesanan} event={this.setPesananProp} name="keamanan" />
+				<ListingPrice value={this.state.harga} label="Harga" />
+				<ListingDuration value={durasi.desain} label="Waktu Pengerjaan" />
+				<ListingDuration value={durasi.revisi} label="Durasi Revisi" />
+				<Submit event={this.submitPesanan}/>
+			</form>
 		);
 	}
 }

@@ -1,12 +1,17 @@
-import {
+import React, {
 	Component
 } from 'react';
+import { SchemeList } from './BaseWidget';
 
 class BaseCalculator extends Component {
 	constructor() {
 		super();
 
 		this.state = {
+			konten: {
+				...this.konten(),
+				id: this.konten().title.replace(' ', '').toLowerCase()
+			},
 			paket: this.listPaket(),
 			pesanan: {
 				...this.listPaket()[0].pesanan
@@ -25,7 +30,7 @@ class BaseCalculator extends Component {
 	setSchemeProp = (i) => {
 		this.setState((state) => {
 			return {
-				pesanan:  { ...state.paket[i].pesanan },
+				pesanan: { ...state.paket[i].pesanan },
 			}
 		})
 		this.calculate();
@@ -62,7 +67,35 @@ class BaseCalculator extends Component {
 	listPaket() {
 		return []
 	}
+	konten() {
+		return {
+			title: "Title",
+			deskripsi: "Lorem Ipsum",
+			color: "gray",
+		}
+	}
 	calculate() {
+	}
+	renderControls() {
+		return <div></div>
+	}
+	submitPesanan = (e) => {
+		return false;
+	}
+	render() {
+		return (
+			<div style={{'--scheme':this.state.konten.color}} className="calculator-container" id={this.state.konten.id}>
+				<input hidden type="radio" name="hero" id={'hero'+this.state.konten.id}/>
+				<div className="calculator-hero">
+					<h3>{this.state.konten.title}</h3>
+					<p>{this.state.konten.deskripsi}</p>
+					<label className="hero-go" htmlFor={'hero'+this.state.konten.id}>Pesan</label>
+				</div>
+				<div className="calculator-body">
+					<SchemeList list={this.state.paket} event={this.setSchemeProp} />
+					{this.renderControls()}
+				</div>
+			</div>)
 	}
 }
 

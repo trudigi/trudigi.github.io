@@ -1,7 +1,7 @@
 import React from 'react';
 import BaseCalculator from './BaseCalculator';
 import Paket from './paket/Poster';
-import { Slider, Checkbox, ListingPrice, ListingDuration, SchemeList } from './PesananWidget';
+import { Slider, Checkbox, ListingPrice, ListingDuration, Submit } from './BaseWidget';
 
 class Poster extends BaseCalculator {
 	listPaket() { return Paket }
@@ -18,24 +18,28 @@ class Poster extends BaseCalculator {
 		})
 	};
 
-	render() {
+
+
+	konten() {
+		return {
+			title: "Media Poster",
+			deskripsi: "Pembuatan Media Grafis Poster",
+			color: "hsl(240, 100%, 20%)",
+		}
+	}
+	renderControls() {
 		const pesanan = this.state.pesanan;
 		const durasi = this.state.durasi;
 		return (
-			<div className="calculator-container">
-				<h4 className="calculator-head">Poster</h4>
-				<div className="calculator-body">
-					<SchemeList list={this.state.paket} event={this.setSchemeProp}/>
-					<form className="control-group">
-						<Slider value={pesanan} event={this.setPesananProp} name="desain" min="1" max="10" />
-						<Slider value={pesanan} event={this.setPesananProp} name="revisi" min="2" max="5" />
-						<Checkbox value={pesanan} event={this.setPesananProp} name="kilat" />
-						<ListingPrice value={this.state.harga} label="Harga" />
-						<ListingDuration value={durasi.desain} label="Waktu Pengerjaan" />
-						<ListingDuration value={durasi.revisi} label="Durasi Revisi" />
-					</form>
-				</div>
-			</div>
+			<form className="control-group">
+				<Slider value={pesanan} event={this.setPesananProp} name="desain" min="1" max="10" />
+				<Slider value={pesanan} event={this.setPesananProp} name="revisi" min="2" max="5" />
+				<Checkbox value={pesanan} event={this.setPesananProp} name="kilat" />
+				<ListingPrice value={this.state.harga} label="Harga" />
+				<ListingDuration value={durasi.desain} label="Waktu Pengerjaan" />
+				<ListingDuration value={durasi.revisi} label="Durasi Revisi" />
+				<Submit event={this.submitPesanan}/>
+			</form>
 		);
 	}
 }
