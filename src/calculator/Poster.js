@@ -23,6 +23,10 @@ class Poster extends BaseCalculator {
 			title: "Media Poster",
 			deskripsi: "Pembuatan Media Grafis Poster",
 			color: "hsl(240, 100%, 20%)",
+			contact: {
+				name: 'Julius',
+				whatsapp: '62852572841'+72
+			}
 		}
 	}
 	renderControls() {
@@ -30,8 +34,8 @@ class Poster extends BaseCalculator {
 		const durasi = this.state.durasi;
 		return (
 			<form className="control-group">
-				<Slider value={pesanan} event={this.setPesananProp} name="desain" min="1" max="10" />
-				<Slider value={pesanan} event={this.setPesananProp} name="revisi" min="2" max="5" />
+				<Slider value={pesanan} event={this.setPesananProp} name="desain" min={1} max={10} />
+				<Slider value={pesanan} event={this.setPesananProp} name="revisi" min={2} max="5" />
 				<Checkbox value={pesanan} event={this.setPesananProp} name="kilat" />
 				<ListingPrice value={this.state.harga} label="Harga" />
 				<ListingDuration value={durasi.desain} label="Waktu Pengerjaan" />

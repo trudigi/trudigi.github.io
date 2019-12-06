@@ -29,6 +29,10 @@ class Mobile extends BaseCalculator {
 			title: "Aplikasi Mobile",
 			deskripsi: "Pembuatan Aplikasi untuk Perangkat Mobile",
 			color: "hsl(300, 100%, 20%)",
+			contact: {
+				name: 'Julius',
+				whatsapp: '62852572841'+72
+			}
 		}
 	}
 	renderControls() {
@@ -38,7 +42,7 @@ class Mobile extends BaseCalculator {
 			<form className="control-group">
 				<Option value={pesanan} event={this.setPesananProp} name="framework" options={MobileFrameworks} />
 				<Option value={pesanan} event={this.setPesananProp} name="database" options={Databases} />
-				<Slider value={pesanan} event={this.setPesananProp} name="revisi" min="2" max="10" />
+				<Slider value={pesanan} event={this.setPesananProp} name="revisi" min={2} max={10} />
 				<Checkbox value={pesanan} event={this.setPesananProp} name="kilat" />
 				<Checkbox value={pesanan} event={this.setPesananProp} name="keamanan" />
 				<ListingPrice value={this.state.harga} label="Harga" />

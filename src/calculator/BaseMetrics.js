@@ -28,7 +28,7 @@ const DesktopFrameworks = {
 		durasi: 14
 	},
 	'swing': {
-		nama: "Java (Swing)",
+		nama: "Java (JavaFX)",
 		deskripsi: "Aplikasi Desktop untuk manajemen data kompleks berbasis OOP dari Java",
 		harga: 150000,
 		durasi: 14,

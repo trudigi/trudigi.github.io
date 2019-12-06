@@ -31,6 +31,10 @@ class Video extends BaseCalculator {
 			title: "Video Editing",
 			deskripsi: "Editing dan Komposisi Video Footage",
 			color: "hsl(0, 100%, 20%)",
+			contact: {
+				name: 'Julius',
+				whatsapp: '62852572841'+72
+			}
 		}
 	}
 	renderControls() {
@@ -39,8 +43,8 @@ class Video extends BaseCalculator {
 		return (
 			<form className="control-group">
 				<Option value={pesanan} event={this.setPesananProp} name="editing" options={VideoEditing} />
-				<Slider value={pesanan} event={this.setPesananProp} name="length" min="1" max="30" />
-				<Slider value={pesanan} event={this.setPesananProp} name="revisi" min="2" max="10" />
+				<Slider value={pesanan} event={this.setPesananProp} name="length" min={1} max={30} />
+				<Slider value={pesanan} event={this.setPesananProp} name="revisi" min={2} max={10} />
 				<Checkbox value={pesanan} event={this.setPesananProp} name="kilat" />
 				<ListingPrice value={this.state.harga} label="Harga" />
 				<ListingDuration value={durasi.desain} label="Waktu Pengerjaan" />

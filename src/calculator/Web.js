@@ -27,6 +27,10 @@ class Web extends BaseCalculator {
 			title: "Aplikasi Web",
 			deskripsi: "Pembuatan Aplikasi untuk Internet",
 			color: "hsl(40, 100%, 20%)",
+			contact: {
+				name: 'Julius',
+				whatsapp: '62852572841'+72
+			}
 		}
 	}
 	renderControls() {
@@ -36,7 +40,7 @@ class Web extends BaseCalculator {
 			<form className="control-group">
 				<Option value={pesanan} event={this.setPesananProp} name="framework" options={WebFrameworks} />
 				<Option value={pesanan} event={this.setPesananProp} name="database" options={Databases} />
-				<Slider value={pesanan} event={this.setPesananProp} name="revisi" min="2" max="10" />
+				<Slider value={pesanan} event={this.setPesananProp} name="revisi" min={2} max={10} />
 				<Checkbox value={pesanan} event={this.setPesananProp} name="kilat" />
 				<Checkbox value={pesanan} event={this.setPesananProp} name="keamanan" />
 				<ListingPrice value={this.state.harga} label="Harga" />

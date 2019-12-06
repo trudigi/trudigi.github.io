@@ -2,19 +2,32 @@ import React, {
 	Component
 } from 'react';
 import { SchemeList } from './BaseWidget';
+import lz from 'lz-string';
 
 class BaseCalculator extends Component {
+	tracePesanan(id) {
+		try {
+			const o = JSON.parse(lz.decompressFromEncodedURIComponent(new URLSearchParams(window.location.search).get('invoice')))
+			if (o.context === id) {
+				let oriP =  { ...this.listPaket()[0].pesanan }
+				Object.keys(oriP).forEach(k => oriP[k] = o.hasOwnProperty(k) ? o[k] : oriP[k])
+				return oriP;
+			}
+		} catch (error) {
+		}
+		return { ...this.listPaket()[0].pesanan }
+	}
 	constructor() {
 		super();
-
+		const id = this.konten().title.replace(' ', '').toLowerCase()
 		this.state = {
 			konten: {
 				...this.konten(),
-				id: this.konten().title.replace(' ', '').toLowerCase()
+				id
 			},
 			paket: this.listPaket(),
 			pesanan: {
-				...this.listPaket()[0].pesanan
+				...this.tracePesanan(id)
 			},
 			harga: 0,
 			durasi: {
@@ -22,21 +35,25 @@ class BaseCalculator extends Component {
 				revisi: 0,
 			}
 		}
-
 	}
 	componentDidMount() {
 		this.calculate();
 	}
 	setSchemeProp = (i) => {
+
+		if (window.location.search.includes('invoice')) return;
+
 		this.setState((state) => {
 			return {
 				pesanan: { ...state.paket[i].pesanan },
 			}
 		})
 		this.calculate();
-		return false;
 	}
 	setPesananProp = (e) => {
+
+		if (window.location.search.includes('invoice')) return;
+
 		let delta = {};
 
 		if (e.target.type === 'radio') {
@@ -62,6 +79,7 @@ class BaseCalculator extends Component {
 
 			}
 		})
+
 		this.calculate();
 	};
 	listPaket() {
@@ -76,15 +94,32 @@ class BaseCalculator extends Component {
 	}
 	calculate() {
 	}
+	checkout() {
+		return {
+
+		}
+	}
 	renderControls() {
 		return <div></div>
 	}
 	submitPesanan = (e) => {
-		window.location.hash = '#checkout';
-		window.history.replaceState('checkout', 'Checkout', '?invoice='+btoa(JSON.stringify({
+		window.location.hash = '#checkout'
+		window.history.replaceState('checkout', 'Checkout', '?invoice='+lz.compressToEncodedURIComponent(JSON.stringify({
+			context: this.state.konten.id,
 			...this.state.pesanan
-		}))+'#checkout');
+		}))+'#'+this.state.konten.id);
 		e.preventDefault();
+		if (this.props.event)
+			this.props.event({
+				uri: window.location.href,
+				konten: this.state.konten,
+				harga: this.state.harga,
+				durasi: this.state.durasi,
+				kilat: this.state.pesanan.kilat || false,
+			})
+	}
+	clearCheckout = (e) => {
+		window.history.replaceState('checkout', 'Checkout', '/');
 	}
 	render() {
 		return (
@@ -92,7 +127,7 @@ class BaseCalculator extends Component {
 				<div className="calculator-hero">
 					<h3>{this.state.konten.title}</h3>
 					<p>{this.state.konten.deskripsi}</p>
-					<a className="hero-go" href={'#'+this.state.konten.id}>Pesan</a>
+					<a className="hero-go" onClick={this.clearCheckout} href={'#'+this.state.konten.id}>Pesan</a>
 				</div>
 				<div className="calculator-body">
 					<SchemeList list={this.state.paket} event={this.setSchemeProp} />

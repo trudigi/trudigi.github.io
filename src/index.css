@@ -147,6 +147,22 @@ code {
 
 }
 
+.hero-go-checkout {
+  color: black;
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 2000px;
+  text-align: center;
+  padding: 0.1em 2em;
+  margin: 0.5em 0;
+  display: block;
+  transition: all 0.2s;
+}
+
+.hero-go-checkout:hover {
+  color: white;
+  background: black;
+}
 
 [aria-label][data-balloon-pos][data-balloon-length="large"]:after {
   white-space: pre-wrap !important;

@@ -28,6 +28,10 @@ class Media extends BaseCalculator {
 			title: "Media Interaktif",
 			deskripsi: "Pembuatan Media Digital Interaktif",
 			color: "hsl(180, 100%, 20%)",
+			contact: {
+				name: 'Julius',
+				whatsapp: '62852572841'+72
+			}
 		}
 	}
 	renderControls() {
@@ -38,7 +42,7 @@ class Media extends BaseCalculator {
 				<Option value={pesanan} event={this.setPesananProp} name="framework" options={MediaFrameworks} />
 				<Option value={pesanan} event={this.setPesananProp} name="interactivity" options={MediaInteractivity} />
 				<Option value={pesanan} event={this.setPesananProp} name="graphics" options={MediaGraphics} />
-				<Slider value={pesanan} event={this.setPesananProp} name="revisi" min="2" max="10" />
+				<Slider value={pesanan} event={this.setPesananProp} name="revisi" min={2} max={10} />
 				<Checkbox value={pesanan} event={this.setPesananProp} name="kilat" />
 				<ListingPrice value={this.state.harga} label="Harga" />
 				<ListingDuration value={durasi.desain} label="Waktu Pengerjaan" />

@@ -8,6 +8,7 @@
     "@zendeskgarden/react-grid": "^7.1.2",
     "@zendeskgarden/react-theming": "^7.0.0",
     "balloon-css": "^1.0.4",
+    "lz-string": "^1.4.4",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",

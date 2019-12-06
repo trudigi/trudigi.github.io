@@ -29,6 +29,10 @@ class Desktop extends BaseCalculator {
 			title: "Aplikasi Desktop",
 			deskripsi: "Pembuatan Aplikasi untuk PC",
 			color: "hsl(120, 100%, 20%)",
+			contact: {
+				name: 'Julius',
+				whatsapp: '62852572841'+72
+			}
 		}
 	}
 	renderControls() {
@@ -38,7 +42,7 @@ class Desktop extends BaseCalculator {
 			<form className="control-group">
 				<Option value={pesanan} event={this.setPesananProp} name="framework" options={DesktopFrameworks} />
 				<Option value={pesanan} event={this.setPesananProp} name="database" options={Databases} />
-				<Slider value={pesanan} event={this.setPesananProp} name="revisi" min="2" max="10" />
+				<Slider value={pesanan} event={this.setPesananProp} name="revisi" min={2} max={10} />
 				<Checkbox value={pesanan} event={this.setPesananProp} name="kilat" />
 				<Checkbox value={pesanan} event={this.setPesananProp} name="keamanan" />
 				<Checkbox value={pesanan} event={this.setPesananProp} name="installer" />
