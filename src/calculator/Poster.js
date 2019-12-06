@@ -18,8 +18,6 @@ class Poster extends BaseCalculator {
 		})
 	};
 
-
-
 	konten() {
 		return {
 			title: "Media Poster",

@@ -1,14 +1,14 @@
+
 const props = {
 	desain: {
 		nama: "Desain",
 		highlight: "Jumlah desain yang ingin dibuat",
-		deskripsi: "Hitung dari jumlah desain termasuk banner, poster, photobooth, dan lain sebagainya"
-
+		deskripsi: "Hitung dari jumlah desain termasuk banner, poster, photobooth, dan lain sebagainya",
 	},
 	framework: {
 		nama: "Framework",
 		highlight: "Tipe software yang ingin anda gunakan selama pembuatan aplikasi",
-		deskripsi: "Pilihan software bergantung pada tujuan atau fokus di aplikasi anda, jadi cermati ya!"
+		deskripsi: "Pilihan software bergantung pada tujuan atau fokus di aplikasi anda, jadi cermati ya!",
 	},
 	database: {
 		nama: "Database",

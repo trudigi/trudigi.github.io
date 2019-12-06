@@ -21,6 +21,14 @@ function App() {
         <Desktop/>
         <Mobile/>
 
+        <div style={{'--scheme':'black'}} className="calculator-container" id="checkout">
+          <div className="calculator-hero">
+          </div>
+          <div className="calculator-body">
+            Checkout
+          </div>
+        </div>
+
       </header>
     </div>
   );

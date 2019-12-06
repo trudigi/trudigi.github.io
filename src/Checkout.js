@@ -3,7 +3,7 @@ import React, {
 } from 'react';
 import { SchemeList } from './BaseWidget';
 
-class BaseCalculator extends Component {
+class Checkout extends Component {
 	constructor() {
 		super();
 
@@ -102,4 +102,4 @@ class BaseCalculator extends Component {
 	}
 }
 
-export default BaseCalculator;
+export default Checkout;
