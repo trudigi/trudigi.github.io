@@ -29,5 +29,15 @@
 			"kilat": false,
 			"keamanan": true
 		}
+	}, {
+		"nama": "Bisnis",
+		"deskripsi": "Aplikasi Mobile untuk Jaringan Besar",
+		"pesanan": {
+			"framework": "ionic",
+			"database": "complex",
+			"revisi": 5,
+			"kilat": false,
+			"keamanan": true
+		}
 	}
 ]

@@ -18,7 +18,12 @@ const props = {
 	interactivity: {
 		nama: "Level Interaksi",
 		highlight: "Ukuran interaksi yang ingin diterapkan",
-		deskripsi: "Ini mendeskripsikan Kerumitan media bergantung pada tujuan dan budget anda."
+		deskripsi: "Ini mendeskripsikan Kerumitan interaksi media bergantung pada tujuan dan budget anda."
+	},
+	graphics: {
+		nama: "Level Grafik",
+		highlight: "Ukuran grafis yang ingin diterapkan",
+		deskripsi: "Ini mendeskripsikan Kerumitan grafis media bergantung pada tujuan dan budget anda."
 	},
 	editing: {
 		nama: "Level Editing",

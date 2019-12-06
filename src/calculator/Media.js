@@ -2,19 +2,22 @@ import React from 'react';
 import BaseCalculator from './BaseCalculator';
 import Paket from './paket/Media';
 import { Slider, Checkbox, ListingDuration, ListingPrice, Option, Submit } from './BaseWidget';
-import { MediaFrameworks, MediaInteractivity } from './BaseMetrics';
+import { MediaFrameworks, MediaInteractivity, MediaGraphics } from './BaseMetrics';
 
 class Media extends BaseCalculator {
 	listPaket() { return Paket }
 	calculate() {
 		this.setState((state) => {
-			const { framework, interactivity, revisi, kilat } = state.pesanan
+			const { framework, interactivity, graphics, revisi, kilat } = state.pesanan
+			const media = MediaFrameworks[framework]
+			const interact = MediaInteractivity[interactivity]
+			const fx = MediaGraphics[graphics]
 			return {
 				// eslint-disable-next-line
-				harga: (MediaFrameworks[framework].harga + MediaInteractivity[interactivity].harga + revisi * 50000) * (kilat ? 2 : 1),
+				harga: (media.harga + interact.harga + fx.harga + revisi * (fx.revisi + interact.revisi)) * (kilat ? 2 : 1),
 				durasi: {
-					desain: Math.floor((MediaFrameworks[framework].durasi + MediaInteractivity[interactivity].durasi) / (kilat ? 2 : 1)),
-					revisi: (kilat ? revisi * 3 + 1 : revisi * 7 + 2),
+					desain: Math.floor((media.durasi + interact.durasi + fx.durasi) / (kilat ? 2 : 1)),
+					revisi: Math.floor(Math.sqrt(kilat ? revisi * (interact.durasi + fx.durasi) + 1 : revisi * (interact.durasi + fx.durasi) * 2 + 2)),
 				}
 			}
 		})
@@ -34,6 +37,7 @@ class Media extends BaseCalculator {
 			<form className="control-group">
 				<Option value={pesanan} event={this.setPesananProp} name="framework" options={MediaFrameworks} />
 				<Option value={pesanan} event={this.setPesananProp} name="interactivity" options={MediaInteractivity} />
+				<Option value={pesanan} event={this.setPesananProp} name="graphics" options={MediaGraphics} />
 				<Slider value={pesanan} event={this.setPesananProp} name="revisi" min="2" max="10" />
 				<Checkbox value={pesanan} event={this.setPesananProp} name="kilat" />
 				<ListingPrice value={this.state.harga} label="Harga" />

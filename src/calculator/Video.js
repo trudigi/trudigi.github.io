@@ -9,15 +9,16 @@ class Video extends BaseCalculator {
 	calculate() {
 		this.setState((state) => {
 			const { editing, length, revisi, kilat } = state.pesanan
+			const video = VideoEditing[editing];
 			return {
 				// eslint-disable-next-line
-				harga: (VideoEditing[editing].harga + VideoEditing[editing].multi * length +
-					revisi * VideoEditing[editing].harga / 5) * (kilat ? 2 : 1),
+				harga: (video.harga + video.multi * length +
+					revisi * video.revisi) * (kilat ? 2 : 1),
 				durasi: {
-					desain: Math.floor((VideoEditing[editing].durasi +
-						VideoEditing[editing].sprint * length)
+					desain: Math.floor((video.durasi +
+						video.sprint * length)
 						 / (kilat ? 2 : 1)),
-					revisi: (kilat ? revisi * 3 + 1 : revisi * 7 + 2),
+					revisi: (kilat ? revisi * video.sprint + 1 : revisi * video.sprint * 2 + 2),
 				}
 			}
 		})

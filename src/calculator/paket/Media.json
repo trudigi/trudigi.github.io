@@ -5,8 +5,9 @@
 		"pesanan": {
 			"framework": "powerpoint",
 			"interactivity": "simple",
+			"graphics": "simple",
 			"revisi": 2,
-			"kilat": true
+			"kilat": false
 		}
 	}, {
 		"nama": "Media Flash",
@@ -14,25 +15,28 @@
 		"pesanan": {
 			"framework": "flash",
 			"interactivity": "click",
+			"graphics": "fluid",
 			"revisi": 3,
 			"kilat": false
 		}
 	}, {
 		"nama": "Game Arcade",
-		"deskripsi": "Game dengan Gameplay sederhana",
+		"deskripsi": "Game dengan Gameplay konvensional",
 		"pesanan": {
 			"framework": "construct",
 			"interactivity": "game",
-			"revisi": 3,
+			"graphics": "humanoid",
+			"revisi": 4,
 			"kilat": false
 		}
 	}, {
-		"nama": "Storyboard Platformer",
-		"deskripsi": "Game Platformer berbasis cerita",
+		"nama": "Virtual Story",
+		"deskripsi": "Adventure Game berbasis cerita",
 		"pesanan": {
 			"framework": "unity",
 			"interactivity": "storyboard",
-			"revisi": 5,
+			"graphics": "fx",
+			"revisi": 6,
 			"kilat": false
 		}
 	}

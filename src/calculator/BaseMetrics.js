@@ -41,33 +41,6 @@ const DesktopFrameworks = {
 	},
 }
 
-const MediaFrameworks = {
-	'powerpoint': {
-		nama: "Powerpoint",
-		deskripsi: "Media Interaktif untuk navigasi konten sederhana",
-		harga: 40000,
-		durasi: 7
-	},
-	'construct': {
-		nama: "Construct",
-		deskripsi: "Media Interaktif untuk 2D dengan Gameplay sederhana",
-		harga: 100000,
-		durasi: 10
-	},
-	'flash': {
-		nama: "Flash/Animate CC",
-		deskripsi: "Media Interaktif untuk konten 2D dengan navigasi intuitif",
-		harga: 200000,
-		durasi: 14,
-	},
-	'unity': {
-		nama: "Unity",
-		deskripsi: "Media Interaktif untuk konten kreatif maupun game 2D/3D ukuran apapun",
-		harga: 300000,
-		durasi: 21,
-	},
-}
-
 const MobileFrameworks = {
 	'android': {
 		nama: "Android Studio",
@@ -116,36 +89,100 @@ const Databases = {
 	},
 }
 
+
+const MediaFrameworks = {
+	'powerpoint': {
+		nama: "Powerpoint",
+		deskripsi: "Solusi universal untuk Media Interaktif dengan navigasi sederhana",
+		harga: 5000,
+		durasi: 7
+	},
+	'construct': {
+		nama: "Construct",
+		deskripsi: "Framework paling cocok untuk Media 2D bergenre Game Arcade ataupun Platformer",
+		harga: 50000,
+		durasi: 10
+	},
+	'flash': {
+		nama: "Flash/Animate CC",
+		deskripsi: "Media Interaktif untuk konten 2D dengan navigasi fleksibel intuitif",
+		harga: 150000,
+		durasi: 14,
+	},
+	'unity': {
+		nama: "Unity",
+		deskripsi: "Solusi konvensional untuk konten kreatif maupun game 2D/3D dengan ukuran apapun",
+		harga: 300000,
+		durasi: 21,
+	},
+}
+
 const MediaInteractivity = {
 	'simple': {
 		nama: "Sederhana",
-		deskripsi: "Navigasi slide dengan animasi sederhana, selebihnya konten statis",
+		deskripsi: "Navigasi slide satu-satu sederhana",
 		harga: 10000,
-		durasi: 0
+		revisi: 1000,
+		durasi: 1
 	},
 	'click': {
 		nama: "Tombol",
 		deskripsi: "Navigasi konten dengan klik, seperti link menu dan kuis multiple choice",
-		harga: 50000,
-		durasi: 2,
+		harga: 20000,
+		revisi: 5000,
+		durasi: 5,
 	},
 	'game': {
 		nama: "Permainan",
 		deskripsi: "Navigasi konten dengan permainan interaktif, seperti game arcade maupun platformer",
-		harga: 200000,
-		durasi: 7,
+		harga: 100000,
+		revisi: 10000,
+		durasi: 10,
 	},
 	'storyboard': {
 		nama: "Storyboard",
-		deskripsi: "Progress level dengan interaksi intuitif, termasuk menyisipkan cerita di setiap jeda level",
-		harga: 500000,
-		durasi: 15,
+		deskripsi: "Progress level dengan interaksi bervariasi, termasuk menyisipkan story scene di setiap jeda level",
+		harga: 400000,
+		revisi: 50000,
+		durasi: 30,
 	},
-	'mega': {
+}
+
+const MediaGraphics = {
+	'simple': {
+		nama: "Sederhana",
+		deskripsi: "Grafis geometris saja, selebihnya konten statis",
+		harga: 10000,
+		revisi: 1500,
+		durasi: 1
+	},
+	'fluid': {
+		nama: "Fluid",
+		deskripsi: "Grafis dengan objek statis yang bergerak dengan animasi halus",
+		harga: 50000,
+		revisi: 5000,
+		durasi: 3
+	},
+	'humanoid': {
+		nama: "Humanoid",
+		deskripsi: "Grafis dengan karakter kartun dan berinteraksi dengan objek sekitarnya secara dinamis",
+		harga: 200000,
+		revisi: 15000,
+		durasi: 14
+	},
+	'fx': {
+		nama: "Full FX",
+		deskripsi: "Interaksi dengan bermacam-macam teknik grafis untuk membawa konten lebih hidup",
+		harga: 400000,
+		revisi: 30000,
+		durasi: 21
+	},
+	'studio': {
 		nama: "Studio",
-		deskripsi: "Konten kustom atau super kompleks dengan fokus pada grafis dan pembawaan storyboard game",
+		deskripsi: "Grafis, Audio, Enviroment dan Story scene kelas AAA",
 		harga: 2000000,
-		durasi: 45,
+		revisi: 100000,
+		durasi: 90
 	},
 }
 
@@ -153,36 +190,40 @@ const VideoEditing = {
 	'simple': {
 		nama: "Sederhana",
 		deskripsi: "Potong dan Sambung Video dengan transisi sederhana",
-		harga: 20000,
+		harga: 10000,
 		multi: 5000,
+		revisi: 2500,
 		durasi: 7,
-		sprint: 1,
+		sprint: .5,
 	},
 	'composition': {
 		nama: "Komposisi Fx",
 		deskripsi: "Komposisi Gambar dan Video termasuk color-tuning video dan transisi intuitif",
-		harga: 50000,
+		harga: 20000,
 		multi: 10000,
+		revisi: 5000,
 		durasi: 14,
-		sprint: 2,
+		sprint: 1,
 	},
 	'tracking': {
 		nama: "Tracking Fx",
-		deskripsi: "Tambahkan elemen grafis dan FX yang melibatkan objek tracking",
-		harga: 150000,
+		deskripsi: "Penambahan elemen grafis dan FX yang melibatkan objeck tracking dan teknik komposisi lainnya",
+		harga: 50000,
 		multi: 20000,
-		durasi: 21,
-		sprint: 4,
+		revisi: 10000,
+		durasi: 18,
+		sprint: 3,
 	},
 	'live': {
 		nama: "Live Action",
-		deskripsi: "Editing video yang melibatkan karakter atau objek 3D dinamis",
-		harga: 400000,
+		deskripsi: "Editing video yang melibatkan karakter atau objek CGI",
+		harga: 200000,
 		multi: 50000,
-		durasi: 21,
+		revisi: 20000,
+		durasi: 24,
 		sprint: 5,
 	}
 }
 
 export { WebFrameworks, DesktopFrameworks, MediaFrameworks,
-	MobileFrameworks, Databases, MediaInteractivity, VideoEditing }
+	MobileFrameworks, Databases, MediaInteractivity, MediaGraphics, VideoEditing }

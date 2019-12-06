@@ -80,7 +80,7 @@ class BaseCalculator extends Component {
 		return <div></div>
 	}
 	submitPesanan = (e) => {
-		return false;
+		e.preventDefault();
 	}
 	render() {
 		return (
