@@ -1,6 +1,5 @@
 import React from 'react';
 import { Field, Label, Hint, Textarea } from '@zendeskgarden/react-forms';
-import { Grid, Row, Col } from '@zendeskgarden/react-grid';
 import {ListingDuration, ListingPrice } from './calculator/BaseWidget';
 
 function Checkout({checkout}) {
