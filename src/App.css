@@ -3,8 +3,18 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: white;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #111;
+}
+
+
+.App-calculator {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,6 +23,32 @@
   color: white;
 }
 
+.App-logo {
+  max-width: 90%;
+  padding: 2em;
+}
 .App-link {
   color: #09d3ac;
+}
+
+.App-qa {
+  background: linear-gradient(whitesmoke, transparent);
+  color: black;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+.App-qa-item {
+    margin: 0em -0.5em;
+    padding: 1.5em 0.5em;
+    font-size: 1.2rem;
+    border-top: 1px solid gainsboro;
+}
+.App-qa-q {
+  font-size: 1.2rem;
+}
+
+.App-qa-a {
+  font-size: 0.8rem;
+  color: #111;
+  margin-top: 2em;
 }

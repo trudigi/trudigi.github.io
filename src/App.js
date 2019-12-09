@@ -6,6 +6,7 @@ import Desktop from './calculator/Desktop';
 import Media from './calculator/Media';
 import Mobile from './calculator/Mobile';
 import Checkout from './Checkout';
+import Header from './Header';
 import './App.css';
 
 class App extends Component {
@@ -36,10 +37,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1>Trudigi</h1>
-          <h3>Trunojoyo Digital Freelancer</h3>
-
+        <Header />
+        <main className="App-calculator">
           <Poster event={this.submit}/>
           <Video event={this.submit}/>
           <Media event={this.submit}/>
@@ -48,8 +47,7 @@ class App extends Component {
           <Mobile event={this.submit}/>
 
           <Checkout checkout={this.state.checkout}/>
-
-        </header>
+        </main>
       </div>
     );
   }
