@@ -29,7 +29,7 @@ class Video extends BaseCalculator {
 	konten() {
 		return {
 			title: "Video Editing",
-			deskripsi: "Editing dan Komposisi Video Footage",
+			deskripsi: "Editing dan Komposisi Video",
 			color: "hsl(0, 100%, 20%)",
 			contact: {
 				name: 'Julius',

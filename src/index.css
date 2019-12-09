@@ -55,8 +55,13 @@ code {
   padding: 0.5em;
   cursor: pointer;
   transition: all 0.2s;
+  background: var(--scheme);
   color: white;
   text-decoration: none;
+}
+
+.hero-go:hover {
+  transform: scale(1.1);
 }
 
 .scheme-group {

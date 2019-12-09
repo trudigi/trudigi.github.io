@@ -8,13 +8,13 @@ const WebFrameworks = {
 	},
 	'php': {
 		nama: "PHP (CodeIgniter)",
-		deskripsi: "Website konvensional, LAMP stack. Cocok untuk pembuatan website apapun dengan model CMS",
+		deskripsi: "Website konvensional, LAMP stack. Cocok untuk pembuatan website bisnis dengan model CMS",
 		harga: 200000,
 		durasi: 21,
 	},
 	'node': {
 		nama: "NodeJS (Express)",
-		deskripsi: "Website modern, MERN stack. Cocok untuk pembuatan website kompleks dengan model PWA",
+		deskripsi: "Website modern, MERN stack. Cocok untuk pembuatan website interaktif dengan model PWA",
 		harga: 300000,
 		durasi: 21,
 	},
@@ -67,7 +67,7 @@ const Databases = {
 		nama: "Mini",
 		deskripsi: "Database dengan 1-3 tabel cocok untuk software dengan login admin atau mengumpulkan data sederhana",
 		harga: 50000,
-		durasi: 2,
+		durasi: 3,
 	},
 	'regular': {
 		nama: "Regular",
@@ -95,7 +95,7 @@ const MediaFrameworks = {
 		nama: "Powerpoint",
 		deskripsi: "Solusi universal untuk Media Interaktif dengan navigasi sederhana",
 		harga: 5000,
-		durasi: 7
+		durasi: 5
 	},
 	'construct': {
 		nama: "Construct",
@@ -107,13 +107,13 @@ const MediaFrameworks = {
 		nama: "Flash/Animate CC",
 		deskripsi: "Media Interaktif untuk konten 2D dengan navigasi fleksibel intuitif",
 		harga: 150000,
-		durasi: 14,
+		durasi: 15,
 	},
 	'unity': {
 		nama: "Unity",
 		deskripsi: "Solusi konvensional untuk konten kreatif maupun game 2D/3D dengan ukuran apapun",
 		harga: 300000,
-		durasi: 21,
+		durasi: 25,
 	},
 }
 
@@ -158,7 +158,7 @@ const MediaGraphics = {
 	},
 	'fluid': {
 		nama: "Fluid",
-		deskripsi: "Grafis dengan objek statis yang bergerak dengan animasi halus",
+		deskripsi: "Grafis dengan objek-objek yang bergerak dengan animasi halus",
 		harga: 50000,
 		revisi: 5000,
 		durasi: 3
@@ -193,26 +193,26 @@ const VideoEditing = {
 		harga: 10000,
 		multi: 5000,
 		revisi: 2500,
-		durasi: 7,
-		sprint: .5,
+		durasi: 4,
+		sprint: .25,
 	},
 	'composition': {
 		nama: "Komposisi Fx",
-		deskripsi: "Komposisi Gambar dan Video termasuk color-tuning video dan transisi intuitif",
-		harga: 20000,
+		deskripsi: "Komposisi Gambar dan Video hingga color-tuning dan transisi intuitif",
+		harga: 30000,
 		multi: 10000,
 		revisi: 5000,
-		durasi: 14,
-		sprint: 1,
+		durasi: 8,
+		sprint: .5,
 	},
 	'tracking': {
 		nama: "Tracking Fx",
-		deskripsi: "Penambahan elemen grafis dan FX yang melibatkan objeck tracking dan teknik komposisi lainnya",
-		harga: 50000,
-		multi: 20000,
+		deskripsi: "Komposisi menggunakan elemen FX dan objek timbul melalui object tracking",
+		harga: 75000,
+		multi: 15000,
 		revisi: 10000,
-		durasi: 18,
-		sprint: 3,
+		durasi: 14,
+		sprint: 2,
 	},
 	'live': {
 		nama: "Live Action",
@@ -221,6 +221,15 @@ const VideoEditing = {
 		multi: 50000,
 		revisi: 20000,
 		durasi: 24,
+		sprint: 3,
+	},
+	'cgi': {
+		nama: "Full CGI",
+		deskripsi: "Video Full Animasi Grafis 2D/3D",
+		harga: 500000,
+		multi: 100000,
+		revisi: 50000,
+		durasi: 45,
 		sprint: 5,
 	}
 }

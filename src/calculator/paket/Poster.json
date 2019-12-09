@@ -4,7 +4,15 @@
 		"deskripsi": "Paket Hemat",
 		"pesanan": {
 			"desain": 1,
-			"revisi": 2,
+			"revisi": 4,
+			"kilat": false
+		}
+	}, {
+		"nama": "Branding",
+		"deskripsi": "Paket Untuk Desain Info Branding",
+		"pesanan": {
+			"desain": 5,
+			"revisi": 6,
 			"kilat": false
 		}
 	}, {
@@ -12,7 +20,7 @@
 		"deskripsi": "Paket Untuk Persiapan Event",
 		"pesanan": {
 			"desain": 4,
-			"revisi": 2,
+			"revisi": 4,
 			"kilat": true
 		}
 	}

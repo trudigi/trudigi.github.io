@@ -14,16 +14,16 @@
 		"pesanan": {
 			"editing": "composition",
 			"length": 5,
-			"revisi": 3,
-			"kilat": true
+			"revisi": 4,
+			"kilat": false
 		}
 	}, {
 		"nama": "Trailer",
-		"deskripsi": "Video Trailer untuk Event Besar",
+		"deskripsi": "Video Trailer untuk Event Atau Produk",
 		"pesanan": {
 			"editing": "tracking",
-			"length": 2,
-			"revisi": 3,
+			"length": 4,
+			"revisi": 4,
 			"kilat": true
 		}
 	}, {
@@ -31,7 +31,7 @@
 		"deskripsi": "Video kombinasi model 3D untuk visualisasi ide",
 		"pesanan": {
 			"editing": "live",
-			"length": 2,
+			"length": 4,
 			"revisi": 5,
 			"kilat": false
 		}

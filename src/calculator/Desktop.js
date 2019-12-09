@@ -15,7 +15,7 @@ class Desktop extends BaseCalculator {
 					(keamanan ? 2 : 1) + revisi * 50000 + (installer ? 50000 : 0)) * (kilat ? 2 : 1),
 				durasi: {
 					desain: Math.floor((DesktopFrameworks[framework].durasi +
-						Databases[database].durasi) / (kilat ? 2 : 1)) + (keamanan ? 7 : 0),
+						Databases[database].durasi * (keamanan ? 2 : 1)) / (kilat ? 2 : 1)),
 					revisi: (kilat ? revisi * 3 + 1 : revisi * 7 + 2),
 				}
 			}

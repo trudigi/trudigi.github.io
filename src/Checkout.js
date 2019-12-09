@@ -24,7 +24,7 @@ function Checkout({checkout}) {
 				rows={5}
 			/>
 			<Hint>Mohon mengisi detail pesanan di pesan berikutnya</Hint>
-			<a class="hero-go-checkout" href={uri}>Kirim via WhatsApp</a>
+			<a className="hero-go-checkout" href={uri}>Kirim via WhatsApp</a>
 			</Field>
 			</form>
 		</div>

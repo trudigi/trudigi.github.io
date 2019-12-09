@@ -24,8 +24,8 @@
 		"deskripsi": "Aplikasi Mobile Modern",
 		"pesanan": {
 			"framework": "ionic",
-			"database": "mini",
-			"revisi": 3,
+			"database": "regular",
+			"revisi": 4,
 			"kilat": false,
 			"keamanan": true
 		}
@@ -35,7 +35,7 @@
 		"pesanan": {
 			"framework": "ionic",
 			"database": "complex",
-			"revisi": 5,
+			"revisi": 6,
 			"kilat": false,
 			"keamanan": true
 		}
