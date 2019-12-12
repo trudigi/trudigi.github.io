@@ -3,24 +3,24 @@ const qaList = [
 	// UMUM
 	{
 		q: "Apa itu TRUDIGI?",
-		a: "TBD."
+		a: "Trudigi adalah Komunitas Mahasiswa Unijoyo yang bergerak membangun IT. Kami melayani pemesanan media dan pengerjaan project software dengan tujuan membantu percepatan perubahan melalui IT pada lingkungan Universitas Trunojoyo Madura."
 	},
 	{
 		q: "Siapa yang merintis TRUDIGI?",
-		a: "TBD."
+		a: "Komunitas kecil mahasiswa dari UTM yang memiliki visi untuk meningkatkan IT di kampus dan sekitarnya."
 	},
 	{
 		q: "Apa motivasi dibelakang TRUDIGI?",
-		a: "TBD."
+		a: "Infrastruktur khusus nya pada bidang IT pada lingkungan kampus sendiri masih kurang baik sehingga disitu sebenarnya banyak peluang untuk dapat berkontribusi dalam pengembangan infratruktur tersebut. Tidak hanya itu dari situ juga ada peluang untuk para Mahasiswa yang ingin membangun Universitas menjadi lebih baik lagi dapat belajar tentunya hal tersebut juga di butuhkan lingkungan yang baik sehingga kita menghadirkan juga Trudigi community."
 	},
 	{
 		q: "Bagaimana cara kerja TRUDIGI?",
-		a: "TBD."
+		a: "Kami membuat plaform agar memudahkan pemesanan project, setelah project di pesan, kami akan merancang agar project tersebut selesai tepat waktu termasuk mengalokasikan dana dan mencari atau merekrut personil tambahan jika di perlukan."
 	},
 	// PEMESANAN
 	{
 		q: "Bagaimana cara memesan projek di TRUDIGI?",
-		a: "TBD."
+		a: "Di Trudigi.id anda dapat menyesuaikan kebutuhan sesuai dengan budget anda jika project sudah detail bisa melalui Whatsapp."
 	},
 	{
 		q: "Bagaimana sistem pembayaran di TRUDIGI?",
