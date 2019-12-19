@@ -4,13 +4,14 @@ import BaseCalculator from './BaseCalculator';
 import metrics from './BaseMetrics';
 import { ListMedia, SchemeList, MediaOps, DurationListing } from './BaseWidget';
 import { Grid, Row, Col } from '@zendeskgarden/react-grid';
+import { Field } from '@zendeskgarden/react-forms';
 
 class Media extends BaseCalculator {
 	listPaket() { return Paket }
 	calculate() {
 		this.setState((state) => {
-			const { media, volume, quick, quality } = state.pesanan;
-			let flist = media.map(x => metrics.media[x]).reduce((a, b) => {
+			const { media, quick, quality } = state.pesanan;
+			let flist = Object.keys(media).map(x => metrics.media[x]).reduce((a, b) => {
 				return {
 					price: a.price + b.price,
 					duration: a.duration + b.duration,
@@ -49,8 +50,10 @@ class Media extends BaseCalculator {
 								</Col>
 
 								<Col lg={6}>
+								<Field className="control-item">
 									<MediaOps value={pesanan} event={this.setPesananProp} />
 									<DurationListing value={listing} />
+								</Field>
 								</Col>
 							</Row>
 						</Grid>

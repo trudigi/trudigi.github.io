@@ -25,6 +25,9 @@ code {
 .control-name {
   display: flex;
 }
+.control-item>* {
+  margin: 0.2em 0;
+}
 .control-name>*:first-child {
   margin-right: auto;
 }

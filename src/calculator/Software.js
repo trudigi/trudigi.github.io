@@ -46,19 +46,12 @@ class Software extends BaseCalculator {
 						<SchemeList list={this.state.paket} event={this.setSchemeProp} />
 					</Col>
 					<Col md={6} lg={8}>
-						<Grid>
-							<Row>
-								<Col lg={6}>
-									<SliderDatabase value={pesanan.database} event={this.setPesananProp} name="database" />
-									<ListFramework value={pesanan.framework} event={this.setPesananProp} name="framework" />
-								</Col>
-
-								<Col lg={6}>
-									<SoftwareOps value={pesanan} event={this.setPesananProp} />
-									<DurationListing value={listing} />
-								</Col>
-							</Row>
-						</Grid>
+						<div className="control-item">
+							<SliderDatabase value={pesanan.database} event={this.setPesananProp} name="database" />
+							<ListFramework value={pesanan.framework} event={this.setPesananProp} name="framework" />
+							<SoftwareOps value={pesanan} event={this.setPesananProp} />
+							<DurationListing value={listing} />
+						</div>
 					</Col>
 				</Row>
 			</Grid>

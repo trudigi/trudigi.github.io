@@ -121,20 +121,6 @@ class BaseCalculator extends Component {
 	clearCheckout = (e) => {
 		window.history.replaceState('checkout', 'Checkout', '/');
 	}
-	render() {
-		return (
-			<div style={{'--scheme':this.state.konten.color}} className="calculator-container" id={this.state.konten.id}>
-				<div className="calculator-hero">
-					<h3>{this.state.konten.title}</h3>
-					<p>{this.state.konten.deskripsi}</p>
-					<a className="hero-go" onClick={this.clearCheckout} href={'#'+this.state.konten.id}>Pesan</a>
-				</div>
-				<div className="calculator-body">
-
-					{this.renderControls()}
-				</div>
-			</div>)
-	}
 }
 
 export default BaseCalculator;

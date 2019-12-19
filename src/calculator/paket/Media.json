@@ -3,8 +3,7 @@
 		"nama": "Pamflet",
 		"deskripsi": "Laman CV dan Portofolio",
 		"pesanan": {
-			"media": ["pamflet"],
-			"volume": 1,
+			"media": {"pamflet":1},
 			"quick": false,
 			"quality": false
 		}
