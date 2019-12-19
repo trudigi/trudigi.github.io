@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom';
 import 'balloon-css/balloon.min.css';
 import '@zendeskgarden/react-forms/dist/styles.css';
 import '@zendeskgarden/react-grid/dist/styles.css';
+import '@zendeskgarden/react-tabs/dist/styles.css';
+import '@zendeskgarden/react-dropdowns/dist/styles.css';
+import '@zendeskgarden/react-buttons/dist/styles.css';
+import '@zendeskgarden/react-tooltips/dist/styles.css';
+import 'react-accessible-accordion/dist/fancy-example.css';
+
 import './index.css';
 import { ThemeProvider } from '@zendeskgarden/react-theming';
 import App from './App';

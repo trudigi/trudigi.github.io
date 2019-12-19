@@ -1,238 +1,146 @@
 
-const WebFrameworks = {
-	'none': {
-		nama: "Statis",
-		deskripsi: "Website yang hanya menyediakan konten. Cocok untuk pembuatan CV dan Landing Page",
-		harga: 50000,
-		durasi: 14
+const props = {
+	'frameworks': {
+		'static': {
+			name: 'HTML Statis',
+			price: 100000,
+			title: "Website Full Client yang hanya menyediakan konten. Cocok untuk pembuatan CV dan Landing Page",
+			group: 'Web',
+			duration: 7,
+		},
+		'ci': {
+			name: 'CodeIgniter',
+			title: "Website PHP konvensional menggunakan CodeIgniter yang simpel digunakan. Cocok untuk pembuatan website bisnis dengan model CMS",
+			price: 200000,
+			group: 'Web',
+			duration: 14,
+		},
+		'express': {
+			name: 'Express',
+			title: "Website modern, MERN stack. Cocok untuk pembuatan website interaktif dengan model PWA",
+			price: 400000,
+			group: 'Web',
+			duration: 14,
+		},
+		'laravel': {
+			name: 'Laravel',
+			title: "Website modern, MERN stack. Cocok untuk pembuatan website interaktif dengan model PWA",
+			price: 600000,
+			group: 'Web',
+			duration: 21,
+		},
+		'pyqt': {
+			name: 'Python (Qt)',
+			title: "Aplikasi Desktop Sederhana menggunakan bahasa Python yang simpel",
+			price: 150000,
+			group: 'Desktop',
+			duration: 7,
+		},
+		'javafx': {
+			name: 'Java (JavaFX)',
+			title: "Aplikasi Desktop untuk manajemen data kompleks berbasis OOP dari Java",
+			price: 250000,
+			group: 'Desktop',
+			duration: 14,
+		},
+		'electron': {
+			name: 'NodeJS (Electron)',
+			title: "Aplikasi Desktop berbasis Teknologi Web (HTML/CSS/JS) untuk desain fleksibel",
+			price: 300000,
+			group: 'Desktop',
+			duration: 14,
+		},
+		'pwa': {
+			name: 'PWA',
+			title: "",
+			price: 100000,
+			group: 'Mobile',
+			duration: 7,
+		},
+		'android': {
+			name: 'Android Native',
+			title: "Aplikasi Android Native untuk ukuran aplikasi apapun",
+			price: 200000,
+			group: 'Mobile',
+			duration: 14,
+		},
+		'ionic': {
+			name: 'Ionic React',
+			title: "Aplikasi Mobile (Android/iOS) menggunakan teknologi React Native",
+			price: 300000,
+			group: 'Mobile',
+			duration: 21,
+		},
+		'python': {
+			name: 'Python',
+			title: "Aplikasi Mobile (Android/iOS) menggunakan teknologi React Native",
+			price: 150000,
+			group: 'Computing',
+			duration: 7,
+		},
+		'node': {
+			name: 'NodeJS',
+			title: "Aplikasi Mobile (Android/iOS) menggunakan teknologi React Native",
+			price: 300000,
+			group: 'Computing',
+			duration: 14,
+		},
+		'cpp': {
+			name: 'C++',
+			title: "Aplikasi Mobile (Android/iOS) menggunakan teknologi React Native",
+			price: 500000,
+			group: 'Computing',
+			duration: 14,
+		},
 	},
-	'php': {
-		nama: "PHP (CodeIgniter)",
-		deskripsi: "Website konvensional, LAMP stack. Cocok untuk pembuatan website bisnis dengan model CMS",
-		harga: 200000,
-		durasi: 21,
+	'database': {
+		'none': {
+			name: "Tanpa Database",
+			title: "Software tanpa ada data masuk maupun keluar",
+			price: 0,
+			duration: 0
+		},
+		'mini': {
+			name: "Mini",
+			title: "Database untuk mengumpulkan data sederhana dan autentikasi admin saja",
+			price: 100000,
+			duration: 3,
+		},
+		'regular': {
+			name: "Regular",
+			title: "Database ukuran sedang untuk autentikasi admin dan pengguna",
+			price: 200000,
+			duration: 7,
+		},
+		'complex': {
+			name: "Kompleks",
+			title: "Database kompleks menampung berbagai jenis user dan konten",
+			price: 500000,
+			duration: 14,
+		},
+		'mega': {
+			name: "Forensik",
+			title: "Database sangat kompleks menyediakan analisa statis, laporan dan fitur ekspor pada",
+			price: 1000000,
+			duration: 21,
+		},
 	},
-	'node': {
-		nama: "NodeJS (Express)",
-		deskripsi: "Website modern, MERN stack. Cocok untuk pembuatan website interaktif dengan model PWA",
-		harga: 300000,
-		durasi: 21,
-	},
-}
-
-const DesktopFrameworks = {
-	'pyqt': {
-		nama: "Python (PyQt)",
-		deskripsi: "Aplikasi Desktop Sederhana menggunakan bahasa Python yang simpel",
-		harga: 100000,
-		durasi: 14
-	},
-	'swing': {
-		nama: "Java (JavaFX)",
-		deskripsi: "Aplikasi Desktop untuk manajemen data kompleks berbasis OOP dari Java",
-		harga: 150000,
-		durasi: 14,
-	},
-	'electron': {
-		nama: "Node.JS (Electron)",
-		deskripsi: "Aplikasi Desktop berbasis Teknologi Web (HTML/CSS/JS) untuk desain fleksibel",
-		harga: 200000,
-		durasi: 21,
-	},
-}
-
-const MobileFrameworks = {
-	'android': {
-		nama: "Android Studio",
-		deskripsi: "Aplikasi Android Native untuk ukuran aplikasi apapun",
-		harga: 300000,
-		durasi: 21
-	},
-	'ionic': {
-		nama: "Ionic (React Native)",
-		deskripsi: "Aplikasi Mobile (Android/iOS) menggunakan teknologi React Native",
-		harga: 400000,
-		durasi: 28
+	'media': {
+		'pamflet': {
+			name: "Pamflet",
+			title: "Pamflet",
+			group: 'Grafis',
+			price: 0,
+			duration: 0,
+		},
+		'infographic': {
+			name: "Inforgrafis",
+			title: "Inforgrafis",
+			group: 'Grafis',
+			price: 0,
+			duration: 0
+		},
 	}
 }
 
-const Databases = {
-	'none': {
-		nama: "Tanpa Database",
-		deskripsi: "Software statis tanpa ada data masuk/keluar",
-		harga: 0,
-		durasi: 0
-	},
-	'mini': {
-		nama: "Mini",
-		deskripsi: "Database dengan 1-3 tabel cocok untuk software dengan login admin atau mengumpulkan data sederhana",
-		harga: 50000,
-		durasi: 3,
-	},
-	'regular': {
-		nama: "Regular",
-		deskripsi: "Database dengan 3-7 tabel cocok untuk software lengkap dengan login admin dan pengguna",
-		harga: 100000,
-		durasi: 7,
-	},
-	'complex': {
-		nama: "Kompleks",
-		deskripsi: "Database kompleks untuk software yang mengelola beragam jenis konten dan pengguna.",
-		harga: 400000,
-		durasi: 14,
-	},
-	'mega': {
-		nama: "Forensik",
-		deskripsi: "Database super kompleks lengkap dengan laporan, data ekspor, dan analisa statis.",
-		harga: 1000000,
-		durasi: 21,
-	},
-}
-
-
-const MediaFrameworks = {
-	'powerpoint': {
-		nama: "Powerpoint",
-		deskripsi: "Solusi universal untuk Media Interaktif dengan navigasi sederhana",
-		harga: 5000,
-		durasi: 5
-	},
-	'construct': {
-		nama: "Construct",
-		deskripsi: "Framework paling cocok untuk Media 2D bergenre Game Arcade ataupun Platformer",
-		harga: 50000,
-		durasi: 10
-	},
-	'flash': {
-		nama: "Flash/Animate CC",
-		deskripsi: "Media Interaktif untuk konten 2D dengan navigasi fleksibel intuitif",
-		harga: 150000,
-		durasi: 15,
-	},
-	'unity': {
-		nama: "Unity",
-		deskripsi: "Solusi konvensional untuk konten kreatif maupun game 2D/3D dengan ukuran apapun",
-		harga: 300000,
-		durasi: 25,
-	},
-}
-
-const MediaInteractivity = {
-	'simple': {
-		nama: "Sederhana",
-		deskripsi: "Navigasi slide satu-satu sederhana",
-		harga: 10000,
-		revisi: 1000,
-		durasi: 1
-	},
-	'click': {
-		nama: "Tombol",
-		deskripsi: "Navigasi konten dengan klik, seperti link menu dan kuis multiple choice",
-		harga: 20000,
-		revisi: 5000,
-		durasi: 5,
-	},
-	'game': {
-		nama: "Permainan",
-		deskripsi: "Navigasi konten dengan permainan interaktif, seperti game arcade maupun platformer",
-		harga: 100000,
-		revisi: 10000,
-		durasi: 10,
-	},
-	'storyboard': {
-		nama: "Storyboard",
-		deskripsi: "Progress level dengan interaksi bervariasi, termasuk menyisipkan story scene di setiap jeda level",
-		harga: 400000,
-		revisi: 50000,
-		durasi: 30,
-	},
-}
-
-const MediaGraphics = {
-	'simple': {
-		nama: "Sederhana",
-		deskripsi: "Grafis geometris saja, selebihnya konten statis",
-		harga: 10000,
-		revisi: 1500,
-		durasi: 1
-	},
-	'fluid': {
-		nama: "Fluid",
-		deskripsi: "Grafis dengan objek-objek yang bergerak dengan animasi halus",
-		harga: 50000,
-		revisi: 5000,
-		durasi: 3
-	},
-	'humanoid': {
-		nama: "Humanoid",
-		deskripsi: "Grafis dengan karakter kartun dan berinteraksi dengan objek sekitarnya secara dinamis",
-		harga: 200000,
-		revisi: 15000,
-		durasi: 14
-	},
-	'fx': {
-		nama: "Full FX",
-		deskripsi: "Interaksi dengan bermacam-macam teknik grafis untuk membawa konten lebih hidup",
-		harga: 400000,
-		revisi: 30000,
-		durasi: 21
-	},
-	'studio': {
-		nama: "Studio",
-		deskripsi: "Grafis, Audio, Enviroment dan Story scene kelas AAA",
-		harga: 2000000,
-		revisi: 100000,
-		durasi: 90
-	},
-}
-
-const VideoEditing = {
-	'simple': {
-		nama: "Sederhana",
-		deskripsi: "Potong dan Sambung Video dengan transisi sederhana",
-		harga: 10000,
-		multi: 5000,
-		revisi: 2500,
-		durasi: 4,
-		sprint: .25,
-	},
-	'composition': {
-		nama: "Komposisi Fx",
-		deskripsi: "Komposisi Gambar dan Video hingga color-tuning dan transisi intuitif",
-		harga: 30000,
-		multi: 10000,
-		revisi: 5000,
-		durasi: 8,
-		sprint: .5,
-	},
-	'tracking': {
-		nama: "Tracking Fx",
-		deskripsi: "Komposisi menggunakan elemen FX dan objek timbul melalui object tracking",
-		harga: 75000,
-		multi: 15000,
-		revisi: 10000,
-		durasi: 14,
-		sprint: 2,
-	},
-	'live': {
-		nama: "Live Action",
-		deskripsi: "Editing video yang melibatkan karakter atau objek CGI",
-		harga: 200000,
-		multi: 50000,
-		revisi: 20000,
-		durasi: 24,
-		sprint: 3,
-	},
-	'cgi': {
-		nama: "Full CGI",
-		deskripsi: "Video Full Animasi Grafis 2D/3D",
-		harga: 500000,
-		multi: 100000,
-		revisi: 50000,
-		durasi: 45,
-		sprint: 5,
-	}
-}
-
-export { WebFrameworks, DesktopFrameworks, MediaFrameworks,
-	MobileFrameworks, Databases, MediaInteractivity, MediaGraphics, VideoEditing }
+export default props;

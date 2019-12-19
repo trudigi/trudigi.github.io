@@ -4,22 +4,17 @@
 
 .App-header {
   background-color: white;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 1vmin);
   color: #111;
 }
 
 
 .App-calculator {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 1vmin);
   color: white;
 }
 
@@ -32,13 +27,10 @@
 }
 
 .App-qa {
-  background: linear-gradient(whitesmoke, transparent);
+  background: linear-gradient(whitesmoke, white);
   color: black;
-  overflow-y: auto;
-  max-height: 100vh;
 }
 .App-qa-item {
-    margin: 0em -0.5em;
     padding: 1.5em 0.5em;
     font-size: 1.2rem;
     border-top: 1px solid gainsboro;

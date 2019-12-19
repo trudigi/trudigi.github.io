@@ -1,43 +1,12 @@
 [
 	{
-		"nama": "Powerpoint",
-		"deskripsi": "Slide untuk Presentasi Materi",
+		"nama": "Pamflet",
+		"deskripsi": "Laman CV dan Portofolio",
 		"pesanan": {
-			"framework": "powerpoint",
-			"interactivity": "simple",
-			"graphics": "simple",
-			"revisi": 2,
-			"kilat": false
-		}
-	}, {
-		"nama": "Media Flash",
-		"deskripsi": "Media Interaktif Flash",
-		"pesanan": {
-			"framework": "flash",
-			"interactivity": "click",
-			"graphics": "fluid",
-			"revisi": 3,
-			"kilat": false
-		}
-	}, {
-		"nama": "Game Arcade",
-		"deskripsi": "Game dengan Gameplay konvensional",
-		"pesanan": {
-			"framework": "construct",
-			"interactivity": "game",
-			"graphics": "humanoid",
-			"revisi": 4,
-			"kilat": false
-		}
-	}, {
-		"nama": "Virtual Story",
-		"deskripsi": "Adventure Game berbasis cerita",
-		"pesanan": {
-			"framework": "unity",
-			"interactivity": "storyboard",
-			"graphics": "fx",
-			"revisi": 5,
-			"kilat": false
+			"media": ["pamflet"],
+			"volume": 1,
+			"quick": false,
+			"quality": false
 		}
 	}
 ]

@@ -1,7 +1,7 @@
 import React, {
 	Component
 } from 'react';
-import { SchemeList } from './BaseWidget';
+
 import lz from 'lz-string';
 
 class BaseCalculator extends Component {
@@ -29,10 +29,10 @@ class BaseCalculator extends Component {
 			pesanan: {
 				...this.tracePesanan(id)
 			},
-			harga: 0,
-			durasi: {
-				desain: 0,
-				revisi: 0,
+			listing: {
+				price: 0,
+				duration: 0,
+				revision: 0,
 			}
 		}
 	}
@@ -130,7 +130,7 @@ class BaseCalculator extends Component {
 					<a className="hero-go" onClick={this.clearCheckout} href={'#'+this.state.konten.id}>Pesan</a>
 				</div>
 				<div className="calculator-body">
-					<SchemeList list={this.state.paket} event={this.setSchemeProp} />
+
 					{this.renderControls()}
 				</div>
 			</div>)

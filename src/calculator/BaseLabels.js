@@ -1,58 +1,62 @@
 
 const props = {
 	desain: {
-		nama: "Desain",
+		name: "Desain",
 		highlight: "Jumlah desain yang ingin dibuat",
-		deskripsi: "Hitung dari jumlah desain termasuk banner, poster, photobooth, dan lain sebagainya",
+		title: "Hitung dari jumlah desain termasuk banner, poster, photobooth, dan lain sebagainya",
 	},
 	framework: {
-		nama: "Framework",
+		name: "Framework",
 		highlight: "Tipe software yang ingin anda gunakan selama pembuatan aplikasi",
-		deskripsi: "Pilihan software bergantung pada tujuan atau fokus di aplikasi anda, jadi cermati ya!",
+		title: "Pilihan software bergantung pada tujuan atau fokus di aplikasi anda, jadi cermati ya!",
 	},
 	database: {
-		nama: "Database",
+		name: "Database",
 		highlight: "Ukuran database yang anda gunakan",
-		deskripsi: "Kerumitan aplikasi bergantung pada ukuran database yang dimanipulasi. Semakin rumit maka semakin lama (dan mahal), jadi pilihlah sesuai kebutuhan."
+		title: "Kerumitan aplikasi bergantung pada ukuran database yang dimanipulasi. Semakin rumit maka semakin lama (dan mahal), jadi pilihlah sesuai kebutuhan."
 	},
 	interactivity: {
-		nama: "Level Interaksi",
+		name: "Level Interaksi",
 		highlight: "Ukuran interaksi yang ingin diterapkan",
-		deskripsi: "Ini mendeskripsikan Kerumitan interaksi media bergantung pada tujuan dan budget anda."
+		title: "Ini mendeskripsikan Kerumitan interaksi media bergantung pada tujuan dan budget anda."
 	},
 	graphics: {
-		nama: "Level Grafik",
+		name: "Level Grafik",
 		highlight: "Ukuran grafis yang ingin diterapkan",
-		deskripsi: "Ini mendeskripsikan Kerumitan grafis media bergantung pada tujuan dan budget anda."
+		title: "Ini mendeskripsikan Kerumitan grafis media bergantung pada tujuan dan budget anda."
 	},
 	editing: {
-		nama: "Level Editing",
+		name: "Level Editing",
 		highlight: "Butuh yang tinggal install langsung pakai?",
-		deskripsi: "Jika anda ingin menyebarkan software ke umum, kami bisa buatkan installer sehingga bisa langsung pakai"
+		title: "Jika anda ingin menyebarkan software ke umum, kami bisa buatkan installer sehingga bisa langsung pakai"
 	},
-	length: {
-		nama: "Panjang Durasi",
+	price: {
+		name: "Harga",
 		highlight: "Target durasi video dalam menit",
 	},
-	revisi: {
-		nama: "Revisi",
+	duration: {
+		name: "Durasi",
+		highlight: "Target durasi video dalam menit",
+	},
+	revision: {
+		name: "Revisi",
 		highlight: "Jumlah revisi yang bisa diajukan setelah tiap submission",
-		deskripsi: "Jika permintaan revisimu melebihi batas, maka kami berhak menaikkan harga dengan pengingat halus"
+		title: "Jika permintaan revisimu melebihi batas, maka kami berhak menaikkan harga dengan pengingat halus"
 	},
-	kilat: {
-		nama: "Kilat",
+	quick: {
+		name: "Kilat",
 		highlight: "Ingin pengerjaan yang lebih cepat?",
-		deskripsi: "Kami berusaha untuk selalu tepat dalam deadline, namun jika ingin cepat, maka kami perlu biaya tambahan agar lebih banyak orang bisa bekerja pada tugas anda"
+		title: "Kami berusaha untuk selalu tepat dalam deadline, namun jika ingin cepat, maka kami perlu biaya tambahan agar lebih banyak orang bisa bekerja pada tugas anda"
 	},
-	keamanan: {
-		nama: "Keamanan",
+	security: {
+		name: "Keamanan",
 		highlight: "Apakah software harus aman dari hacker?",
-		deskripsi: "Jika kamu mempublikasikan software ini ke publik, maka kami akan berpikir dua kali agar database bebas dari bug dan celah untuk hacker mengekspoitasi database"
+		title: "Jika kamu mempublikasikan software ini ke publik, maka kami akan berpikir dua kali agar database bebas dari bug dan celah untuk hacker mengekspoitasi database"
 	},
-	installer: {
-		nama: "Installer",
+	deploy: {
+		name: "Installer",
 		highlight: "Butuh yang tinggal install langsung pakai?",
-		deskripsi: "Jika anda ingin menyebarkan software ke umum, kami bisa buatkan installer sehingga bisa langsung pakai"
+		title: "Jika anda ingin menyebarkan software ke umum, kami bisa buatkan installer sehingga bisa langsung pakai"
 	}
 
 }

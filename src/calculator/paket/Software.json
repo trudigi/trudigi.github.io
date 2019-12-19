@@ -1,0 +1,63 @@
+[
+	{
+		"nama": "Front Website",
+		"deskripsi": "Laman CV dan Portofolio",
+		"pesanan": {
+			"framework": ["static"],
+			"database": "none",
+			"quick": false,
+			"security": false,
+			"deploy": false
+		}
+	}, {
+		"nama": "Web Administrasi",
+		"deskripsi": "Website untuk beragam otorisasi akun",
+		"pesanan": {
+			"framework": ["ci"],
+			"database": "complex",
+			"quick": false,
+			"security": true,
+			"deploy": false
+		}
+	}, {
+		"nama": "Web Audit",
+		"deskripsi": "Website untuk mengumpulkan dan analisa data",
+		"pesanan": {
+			"framework": ["ci"],
+			"database": "mega",
+			"quick": false,
+			"security": true,
+			"deploy": true
+		}
+	}, {
+		"nama": "E-Commerce",
+		"deskripsi": "Website E-commerce",
+		"pesanan": {
+			"framework": ["laravel"],
+			"database": "complex",
+			"quick": false,
+			"security": true,
+			"deploy": true
+		}
+	}, {
+		"nama": "Aplikasi PC",
+		"deskripsi": "Aplikasi PC untuk menyimpan data sederhana",
+		"pesanan": {
+			"framework": ["pyqt"],
+			"database": "mini",
+			"quick": false,
+			"security": false,
+			"deploy": false
+		}
+	}, {
+		"nama": "Aplikasi Kantor",
+		"deskripsi": "Aplikasi PC untuk jaringan kantor",
+		"pesanan": {
+			"framework": ["ci", "javafx"],
+			"database": "complex",
+			"quick": false,
+			"security": true,
+			"deploy": false
+		}
+	}
+]

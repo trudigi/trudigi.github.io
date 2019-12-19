@@ -1,56 +1,64 @@
 import React from 'react';
-import BaseCalculator from './BaseCalculator';
 import Paket from './paket/Media';
-import { Slider, Checkbox, ListingDuration, ListingPrice, Option, Submit } from './BaseWidget';
-import { MediaFrameworks, MediaInteractivity, MediaGraphics } from './BaseMetrics';
+import BaseCalculator from './BaseCalculator';
+import metrics from './BaseMetrics';
+import { ListMedia, SchemeList, MediaOps, DurationListing } from './BaseWidget';
+import { Grid, Row, Col } from '@zendeskgarden/react-grid';
 
 class Media extends BaseCalculator {
 	listPaket() { return Paket }
 	calculate() {
 		this.setState((state) => {
-			const { framework, interactivity, graphics, revisi, kilat } = state.pesanan
-			const media = MediaFrameworks[framework]
-			const interact = MediaInteractivity[interactivity]
-			const fx = MediaGraphics[graphics]
+			const { media, volume, quick, quality } = state.pesanan;
+			let flist = media.map(x => metrics.media[x]).reduce((a, b) => {
+				return {
+					price: a.price + b.price,
+					duration: a.duration + b.duration,
+				}
+			}, {
+				price: 0,
+				duration: 0,
+			});
 			return {
-				// eslint-disable-next-line
-				harga: (media.harga + interact.harga + fx.harga + revisi * (fx.revisi + interact.revisi)) * (kilat ? 2 : 1),
-				durasi: {
-					desain: Math.floor((media.durasi + interact.durasi + fx.durasi) / (kilat ? 2 : 1)),
-					revisi: Math.floor(Math.sqrt(kilat ? revisi * (interact.durasi + fx.durasi) + 1 : revisi * (interact.durasi + fx.durasi) * 2 + 2)),
+				listing: {
+					price: [
+						flist.price,
+						quick ? flist.price : 0,
+						quality ? flist.price : 0,
+					].reduce((a, b) => a + b, 0),
+					duration: Math.floor(flist.duration / (quick ? 3 : 1)),
+					revision: [7, 30][(quality ? 1 : 0)],
 				}
 			}
 		})
-	};
-
-	konten() {
-		return {
-			title: "Media Interaktif",
-			deskripsi: "Pembuatan Media Digital Interaktif",
-			color: "hsl(180, 100%, 20%)",
-			contact: {
-				name: 'Julius',
-				whatsapp: '62852572841'+72
-			}
-		}
 	}
-	renderControls() {
+	render() {
 		const pesanan = this.state.pesanan;
-		const durasi = this.state.durasi;
-		return (
-			<form className="control-group">
-				<Option value={pesanan} event={this.setPesananProp} name="framework" options={MediaFrameworks} />
-				<Option value={pesanan} event={this.setPesananProp} name="interactivity" options={MediaInteractivity} />
-				<Option value={pesanan} event={this.setPesananProp} name="graphics" options={MediaGraphics} />
-				<Slider value={pesanan} event={this.setPesananProp} name="revisi" min={2} max={10} />
-				<Checkbox value={pesanan} event={this.setPesananProp} name="kilat" />
-				<ListingPrice value={this.state.harga} label="Harga" />
-				<ListingDuration value={durasi.desain} label="Waktu Pengerjaan" />
-				<ListingDuration value={durasi.revisi} label="Durasi Revisi" />
-				<Submit event={this.submitPesanan}/>
-			</form>
-		);
+		const listing = this.state.listing;
+		return <div style={{ '--scheme': '#530' }} className="calculator-container" >
+			<Grid>
+				<Row>
+					<Col md={6} lg={4}>
+						<SchemeList list={this.state.paket} event={this.setSchemeProp} />
+					</Col>
+					<Col md={6} lg={8}>
+						<Grid>
+							<Row>
+								<Col lg={6}>
+									<ListMedia value={pesanan.media} event={this.setPesananProp} name="media" />
+								</Col>
+
+								<Col lg={6}>
+									<MediaOps value={pesanan} event={this.setPesananProp} />
+									<DurationListing value={listing} />
+								</Col>
+							</Row>
+						</Grid>
+					</Col>
+				</Row>
+			</Grid>
+		</div>
 	}
 }
 
-export default Media;
+export default Media

@@ -1,53 +1,35 @@
 import React, {Component} from 'react';
-import Poster from './calculator/Poster';
-import Video from './calculator/Video';
-import Web from './calculator/Web';
-import Desktop from './calculator/Desktop';
+import Software from './calculator/Software';
 import Media from './calculator/Media';
-import Mobile from './calculator/Mobile';
-import Checkout from './Checkout';
-import Header from './Header';
+import {Header, QA} from './Header';
+import { Tabs, TabPanel } from '@zendeskgarden/react-tabs';
 import './App.css';
 
 class App extends Component {
   constructor() {
     super()
-    this.state = {checkout: {
-      uri: '',
-      konten: {
-        title: "",
-        deskripsi: "",
-        color: "",
-        contact: {
-          name: '',
-          whatsapp: ''
-        }
-      },
-      harga: 0,
-      durasi: {
-        desain: 0,
-        revisi: 0,
-      },
-      kilat: false
-    }}
-  }
-  submit = (checkout) => {
-    this.setState((state) => { return {checkout}})
   }
   render() {
     return (
       <div className="App">
         <Header />
-        <main className="App-calculator">
-          <Poster event={this.submit}/>
-          <Video event={this.submit}/>
-          <Media event={this.submit}/>
-          <Web event={this.submit}/>
-          <Desktop event={this.submit}/>
-          <Mobile event={this.submit}/>
-
-          <Checkout checkout={this.state.checkout}/>
-        </main>
+        <Tabs>
+          <TabPanel label="Software" key="tab-1">
+            <main className="App-calculator">
+              <Software/>
+            </main>
+          </TabPanel>
+          <TabPanel label="Media" key="tab-2">
+            <main className="App-calculator">
+              <Media/>
+            </main>
+          </TabPanel>
+          <TabPanel label="QA" key="tab-3">
+            <main className="App-calculator">
+              <QA/>
+            </main>
+          </TabPanel>
+        </Tabs>
       </div>
     );
   }
