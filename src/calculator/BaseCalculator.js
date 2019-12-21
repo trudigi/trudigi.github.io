@@ -33,7 +33,8 @@ class BaseCalculator extends Component {
 				price: 0,
 				duration: 0,
 				revision: 0,
-			}
+			},
+			uri: window.location.search.includes('invoice') ? window.location.href : '',
 		}
 	}
 	componentDidMount() {
@@ -103,20 +104,26 @@ class BaseCalculator extends Component {
 		return <div></div>
 	}
 	submitPesanan = (e) => {
-		window.location.hash = '#checkout'
-		window.history.replaceState('checkout', 'Checkout', '?invoice='+lz.compressToEncodedURIComponent(JSON.stringify({
-			context: this.state.konten.id,
-			...this.state.pesanan
-		}))+'#'+this.state.konten.id);
-		e.preventDefault();
-		if (this.props.event)
-			this.props.event({
-				uri: window.location.href,
-				konten: this.state.konten,
-				harga: this.state.harga,
-				durasi: this.state.durasi,
-				kilat: this.state.pesanan.kilat || false,
+		if (window.location.search.includes('invoice')) {
+			this.clearCheckout(e);
+			this.setState((state) => {
+				return {
+					uri: ''
+				}
 			})
+		} else {
+			window.location.hash = '#checkout'
+			window.history.replaceState('checkout', 'Checkout', '?invoice='+lz.compressToEncodedURIComponent(JSON.stringify({
+				context: this.state.konten.id,
+				...this.state.pesanan
+			}))+'#'+this.state.konten.id);
+			e.preventDefault();
+			this.setState((state) => {
+				return {
+					uri: window.location.href
+				}
+			})
+		}
 	}
 	clearCheckout = (e) => {
 		window.history.replaceState('checkout', 'Checkout', '/');

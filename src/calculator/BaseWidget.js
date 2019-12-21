@@ -252,7 +252,12 @@ const toIDR = (v) => v.toLocaleString('id-ID', {
 
 function ListingPrice({ value, label }) {
 	const normal = value;
-	const discount = value >= 500000 ? 0.2 : (value >= 200000 ? 0.10 : (value >= 100000 ? 0.05 : 0));
+	const discount = (
+			(value >= 2000000 ? 0.25 :
+			(value >= 500000 ? 0.2 :
+			(value >= 250000 ? 0.10 :
+			(value >= 100000 ? 0.05 : 0)))));
+
 	let display;
 	if (discount > 0) {
 		display = <><div className="listing-old">
@@ -288,8 +293,21 @@ function SchemeList({ list, event }) {
 	</div>)
 }
 
-function Submit({ event }) {
-	return <button className="hero-submit" onClick={event}>Pesan</button>
+function Submit({ event, uri, title, price, quick }) {
+	if (uri) {
+		let message = `Permisi mas Julius, saya pesan ${title} seharga `
+		+ `${Math.floor(price/1000)}k${quick ? ' paket kilat': ''}, detail ${uri}`;
+		let url = `https://wa.me/${'62852572841'+72}?text=${encodeURIComponent(message)}`
+
+		return <>
+		<button className="hero-submit" onClick={event}>Tarik</button>
+		<textarea readOnly>{message}</textarea>
+		<a className="hero-submit" href={url} _target="blank">Kirim</a>
+		</>
+	} else {
+		return <button className="hero-submit" onClick={event}>Pesan</button>
+	}
+
 }
 
 export { SliderDatabase, Submit, ListFramework, SchemeList, SoftwareOps, DurationListing, MediaOps, ListMedia }

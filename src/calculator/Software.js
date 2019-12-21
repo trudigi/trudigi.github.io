@@ -2,7 +2,7 @@ import React from 'react';
 import Paket from './paket/Software';
 import BaseCalculator from './BaseCalculator';
 import metrics from './BaseMetrics';
-import { ListFramework, SliderDatabase, SchemeList, SoftwareOps, DurationListing } from './BaseWidget';
+import { ListFramework, SliderDatabase, SchemeList, SoftwareOps, DurationListing, Submit } from './BaseWidget';
 import { Grid, Row, Col } from '@zendeskgarden/react-grid';
 
 class Software extends BaseCalculator {
@@ -51,6 +51,8 @@ class Software extends BaseCalculator {
 							<ListFramework value={pesanan.framework} event={this.setPesananProp} name="framework" />
 							<SoftwareOps value={pesanan} event={this.setPesananProp} />
 							<DurationListing value={listing} />
+							<Submit uri={this.state.uri} event={this.submitPesanan}
+									price={listing.price} quick={pesanan.quick} title="Aplikasi"/>
 						</div>
 					</Col>
 				</Row>

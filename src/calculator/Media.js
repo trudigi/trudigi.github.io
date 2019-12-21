@@ -2,7 +2,7 @@ import React from 'react';
 import Paket from './paket/Media';
 import BaseCalculator from './BaseCalculator';
 import metrics from './BaseMetrics';
-import { ListMedia, SchemeList, MediaOps, DurationListing } from './BaseWidget';
+import { ListMedia, SchemeList, MediaOps, DurationListing, Submit } from './BaseWidget';
 import { Grid, Row, Col } from '@zendeskgarden/react-grid';
 
 class Media extends BaseCalculator {
@@ -54,6 +54,8 @@ class Media extends BaseCalculator {
 							<ListMedia value={pesanan.media} event={this.setPesananProp} name="media" />
 							<MediaOps value={pesanan} event={this.setPesananProp} />
 							<DurationListing value={listing} />
+							<Submit uri={this.state.uri} event={this.submitPesanan}
+									price={listing.price} quick={pesanan.quick} title="Media"/>
 						</div>
 					</Col>
 				</Row>

@@ -8,7 +8,13 @@ function QA() {
 	<Grid>
 		<Row >
 			<Col md={6} style={{ '--scheme': '#500' }}  className="calculator-container">
-				<h3>PROMO</h3>
+				<h3>S&amp;K PROMO</h3>
+				<ol style={{textAlign: "left", margin:"2em"}}>
+					<li>Promo Berlaku untuk semua jenis pemesanan Aplikasi dan Media Digital</li>
+					<li>Promo Berlaku untuk semua pemesanan dari 21 Desember 2019 hingga 20 Januari 2020 23:59 Waktu WIB terhitung dari chat pertama</li>
+					<li>Promo Berlaku untuk pemesanan via Website trudigi.id</li>
+					<li>Promo Hanya Berlaku untuk pemesanan pertama individu/institusi/lembaga terkait</li>
+				</ol>
 			</Col>
 			<Col md={6} className="App-qa">
 				<h3>FAQ</h3>
