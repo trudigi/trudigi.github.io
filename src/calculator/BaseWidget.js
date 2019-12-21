@@ -1,8 +1,8 @@
 import React from 'react'
 import BaseLabels from './BaseLabels'
 import BaseMetrics from './BaseMetrics'
-import { Field, Label, Hint, Toggle, Range } from '@zendeskgarden/react-forms';
-import { Icon, IconButton } from '@zendeskgarden/react-buttons';
+import { Field, Label, Hint, Toggle, Range, Textarea, Message } from '@zendeskgarden/react-forms';
+import { Icon, IconButton, Button } from '@zendeskgarden/react-buttons';
 import { Grid, Row, Col } from '@zendeskgarden/react-grid';
 import {
 	Field as DropField, Dropdown, Menu, Item,
@@ -69,13 +69,12 @@ function ListAddDropdown({ event, options }) {
 						const data = options[k];
 						if (data.group !== lastCTG) {
 							lastCTG = data.group
-							return <>
-								<HeaderItem key={lastCTG}>{lastCTG}</HeaderItem>
-								<Item value={k} key={k}>{data.name}</Item>
-							</>
+							return <React.Fragment key={k}>
+								<HeaderItem>{lastCTG}</HeaderItem>
+								<Item value={k}>{data.name}</Item>
+							</React.Fragment>
 						} else {
 							return <Item value={k} key={k}>{data.name}</Item>
-
 						}
 					})
 				}
@@ -104,13 +103,13 @@ function ListFramework({ value, event }) {
 					value.map((k, i) => {
 						let data = BaseMetrics.frameworks[k]
 						return (
-							<>
-								<div className="control-list-item" key={k}>
+							<React.Fragment key={k}>
+								<div className="control-list-item">
 									<div>{data.name}</div>
 									<DeleteButton onClick={() => deleteEvent(i)} />
 								</div>
 								<Hint>{data.title}</Hint>
-							</>
+							</React.Fragment>
 						)
 					})
 				}
@@ -145,16 +144,16 @@ function ListMedia({ value, event }) {
 					Object.keys(value).map((k) => {
 						let data = BaseMetrics.media[k]
 						return (
-							<>
-								<div className="control-list-item" key={k}>
+							<React.Fragment key={k}>
+								<div className="control-list-item">
 								<div>{data.name}</div>
 									<DeleteButton onClick={() => deleteEvent(k)} />
 								</div>
 								<Hint>{data.title}</Hint>
-								<Range value={value[k]} min={1} max={30}
+								<Range value={value[k]} min={1} max={10}
 								 onChange={(v) => changeEvent(v.target.value, k)} />
 								<Hint>{value[k]}&nbsp;&times;&nbsp;{data.volume}</Hint>
-							</>
+							</React.Fragment>
 						)
 					})
 				}
@@ -250,20 +249,28 @@ const toIDR = (v) => v.toLocaleString('id-ID', {
 	currency: 'IDR',
 });
 
-function ListingPrice({ value, label }) {
+function GetDiscount(value) {
 	const normal = value;
 	const discount = (
 			(value >= 2000000 ? 0.25 :
-			(value >= 500000 ? 0.2 :
-			(value >= 250000 ? 0.10 :
-			(value >= 100000 ? 0.05 : 0)))));
+			(value >= 1000000 ? 0.20 :
+			(value >= 500000 ? 0.10 :
+			(value >= 250000 ? 0.05 : 0)))));
+	const discounted = Math.floor(normal * (1-discount));
+	return {
+		normal, discount, discounted
+	};
+}
+
+function ListingPrice({ value, label }) {
+	const { normal, discount, discounted } = GetDiscount(value);
 
 	let display;
 	if (discount > 0) {
 		display = <><div className="listing-old">
 			{toIDR(normal)}
 			</div><div className="listing">
-			{toIDR(Math.floor(normal * (1-discount)))}
+			{toIDR(discounted)}
 			</div>
 			<Hint>Promo Grand Launching: <b>Diskon {discount*100}%</b></Hint>
 			</>
@@ -287,27 +294,36 @@ function SchemeList({ list, event }) {
 			list.map((paket, i) => (
 				<button className="scheme-item" key={paket.nama} onClick={() => event(i)}>
 					<div className="scheme-title">{paket.nama}</div>
+					<small>{paket.deskripsi}</small>
 				</button>
 			))
 		}
 	</div>)
 }
 
-function Submit({ event, uri, title, price, quick }) {
+function Validation({ error }) {
+	if (error) {
+		return <Message validation="error">{error}</Message>
+	} else {
+		return  <Message validation="success">OK</Message>
+	}
+}
+
+function Submit({ event, uri, title, price, quick, disabled }) {
 	if (uri) {
 		let message = `Permisi mas Julius, saya pesan ${title} seharga `
-		+ `${Math.floor(price/1000)}k${quick ? ' paket kilat': ''}, detail ${uri}`;
+		+ `${Math.floor(GetDiscount(price).discounted/1000)}k${quick ? ' paket kilat': ''}, detail ${uri}`;
 		let url = `https://wa.me/${'62852572841'+72}?text=${encodeURIComponent(message)}`
 
 		return <>
-		<button className="hero-submit" onClick={event}>Tarik</button>
-		<textarea readOnly>{message}</textarea>
+		<Button onClick={event}>Tarik</Button>
+		<Field><Textarea readOnly value={message} rows={6} resizable/></Field>
 		<a className="hero-submit" href={url} _target="blank">Kirim</a>
 		</>
 	} else {
-		return <button className="hero-submit" onClick={event}>Pesan</button>
+		return <Button primary onClick={event} disabled={disabled}>Pesan</Button>
 	}
-
 }
 
-export { SliderDatabase, Submit, ListFramework, SchemeList, SoftwareOps, DurationListing, MediaOps, ListMedia }
+export { SliderDatabase, Submit, ListFramework, SchemeList,
+	SoftwareOps, DurationListing, MediaOps, ListMedia, Validation }

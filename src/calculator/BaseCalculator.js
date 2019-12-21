@@ -9,13 +9,13 @@ class BaseCalculator extends Component {
 		try {
 			const o = JSON.parse(lz.decompressFromEncodedURIComponent(new URLSearchParams(window.location.search).get('invoice')))
 			if (o.context === id) {
-				let oriP =  { ...this.listPaket()[0].pesanan }
+				let oriP = JSON.parse(JSON.stringify(this.listPaket()[0].pesanan))
 				Object.keys(oriP).forEach(k => oriP[k] = o.hasOwnProperty(k) ? o[k] : oriP[k])
 				return oriP;
 			}
 		} catch (error) {
 		}
-		return { ...this.listPaket()[0].pesanan }
+		return JSON.parse(JSON.stringify(this.listPaket()[0].pesanan))
 	}
 	constructor() {
 		super();
@@ -35,6 +35,7 @@ class BaseCalculator extends Component {
 				revision: 0,
 			},
 			uri: window.location.search.includes('invoice') ? window.location.href : '',
+			error: '',
 		}
 	}
 	componentDidMount() {

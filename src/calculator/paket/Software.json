@@ -1,7 +1,7 @@
 [
 	{
 		"nama": "Front Website",
-		"deskripsi": "Laman CV dan Portofolio",
+		"deskripsi": "Halaman CV atau Portofolio",
 		"pesanan": {
 			"framework": ["static"],
 			"database": "none",
@@ -10,30 +10,20 @@
 			"deploy": false
 		}
 	}, {
-		"nama": "Web Administrasi",
-		"deskripsi": "Website untuk beragam otorisasi akun",
+		"nama": "E-Commerce",
+		"deskripsi": "Website E-commerce untuk Usaha Lokal",
 		"pesanan": {
 			"framework": ["ci"],
-			"database": "complex",
+			"database": "regular",
 			"quick": false,
 			"security": true,
 			"deploy": false
 		}
 	}, {
-		"nama": "Web Audit",
-		"deskripsi": "Website untuk mengumpulkan dan analisa data",
+		"nama": "Administrasi",
+		"deskripsi": "Website untuk otorisasi sistem",
 		"pesanan": {
 			"framework": ["ci"],
-			"database": "mega",
-			"quick": false,
-			"security": true,
-			"deploy": true
-		}
-	}, {
-		"nama": "E-Commerce",
-		"deskripsi": "Website E-commerce",
-		"pesanan": {
-			"framework": ["laravel"],
 			"database": "complex",
 			"quick": false,
 			"security": true,
@@ -41,7 +31,7 @@
 		}
 	}, {
 		"nama": "Aplikasi PC",
-		"deskripsi": "Aplikasi PC untuk menyimpan data sederhana",
+		"deskripsi": "Aplikasi untuk proses arsip",
 		"pesanan": {
 			"framework": ["pyqt"],
 			"database": "mini",
@@ -51,9 +41,29 @@
 		}
 	}, {
 		"nama": "Aplikasi Kantor",
-		"deskripsi": "Aplikasi PC untuk jaringan kantor",
+		"deskripsi": "Aplikasi untuk jaringan kantor",
 		"pesanan": {
 			"framework": ["ci", "javafx"],
+			"database": "complex",
+			"quick": false,
+			"security": true,
+			"deploy": true
+		}
+	}, {
+		"nama": "Data Science",
+		"deskripsi": "Aplikasi untuk pengolahan data training",
+		"pesanan": {
+			"framework": ["ci", "python"],
+			"database": "regular",
+			"quick": false,
+			"security": false,
+			"deploy": false
+		}
+	}, {
+		"nama": "All-in-One Framework",
+		"deskripsi": "Aplikasi modern berfungsi untuk semua platform",
+		"pesanan": {
+			"framework": ["express", "electron", "ionic"],
 			"database": "complex",
 			"quick": false,
 			"security": true,

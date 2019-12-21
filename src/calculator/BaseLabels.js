@@ -37,8 +37,8 @@ const props = {
 		highlight: "Butuh revisi lama untuk perbaikan kualitas?",
 	},
 	deploy: {
-		name: "Asistensi Deploy",
-		highlight: "Butuh asistensi untuk memasang dan menghosting aplikasi?",
+		name: "Asistensi Pemasangan",
+		highlight: "Butuh bantuan untuk distribusi aplikasi dan migrasi data?",
 	}
 }
 

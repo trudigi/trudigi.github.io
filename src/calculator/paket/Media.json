@@ -1,9 +1,9 @@
 [
 	{
-		"nama": "Pamflet",
-		"deskripsi": "Laman CV dan Portofolio",
+		"nama": "Poster",
+		"deskripsi": "1 desain poster",
 		"pesanan": {
-			"media": {"pamflet":1},
+			"media": {"flyer":1},
 			"quick": false,
 			"quality": false
 		}

@@ -2,7 +2,8 @@ import React from 'react';
 import Paket from './paket/Software';
 import BaseCalculator from './BaseCalculator';
 import metrics from './BaseMetrics';
-import { ListFramework, SliderDatabase, SchemeList, SoftwareOps, DurationListing, Submit } from './BaseWidget';
+import { ListFramework, SliderDatabase, SchemeList,
+	SoftwareOps, DurationListing, Submit, Validation } from './BaseWidget';
 import { Grid, Row, Col } from '@zendeskgarden/react-grid';
 
 class Software extends BaseCalculator {
@@ -19,8 +20,32 @@ class Software extends BaseCalculator {
 				price: 0,
 				duration: 0,
 			});
-			console.log(flist);
 			let dlist = metrics.database[database];
+			let error = '';
+			const hasBackend = (framework.includes('ci') || framework.includes('express') || framework.includes('laravel'));
+			if (framework.length === 0) {
+				error = "Framework kosong";
+			}
+			else if (!security && deploy) {
+				error = "Jika aplikasi benar-benar ingin dijalankan maka audit keamanan harus ada";
+			}
+			else if (security && database === 'none') {
+				error = "Tidak ada pembobolan yang perlu dikhawatirkan jika aplikasi tidak mempunyai database";
+			}
+			else if (hasBackend && database === 'none') {
+				error = "Database tidak bisa kosong apabila memasang backend (CI/Express/Laravel)";
+			}
+			else if (database !== 'none' && !hasBackend && (framework.includes('static') || framework.includes('pwa')))
+			{
+				error = 'Web statis/PWA tidak dapat mengakses database tanpa backend (CI/Express/Laravel)';
+			}
+			else if (database !== 'none' && hasBackend && (framework.includes('static')))
+			{
+				error = 'Web statis sudah termasuk backend (CI/Express/Laravel)';
+			}
+			else if (database !== 'none' && security && !hasBackend) {
+				error = "Agar database terlindungi minimal ada framework backend (CI/Express/Laravel)";
+			}
 			return {
 				listing: {
 					price: [
@@ -32,7 +57,8 @@ class Software extends BaseCalculator {
 					].reduce((a, b) => a + b, 0),
 					duration: Math.floor((flist.duration + dlist.duration) / (quick ? 3 : 1)),
 					revision: [7, 30, 60][(security ? 1 : 0) + (deploy ? 1 : 0)],
-				}
+				},
+				error
 			}
 		})
 	}
@@ -51,7 +77,8 @@ class Software extends BaseCalculator {
 							<ListFramework value={pesanan.framework} event={this.setPesananProp} name="framework" />
 							<SoftwareOps value={pesanan} event={this.setPesananProp} />
 							<DurationListing value={listing} />
-							<Submit uri={this.state.uri} event={this.submitPesanan}
+							<Validation error={this.state.error}/>
+							<Submit uri={this.state.uri} event={this.submitPesanan} disabled={Boolean(this.state.error)}
 									price={listing.price} quick={pesanan.quick} title="Aplikasi"/>
 						</div>
 					</Col>
