@@ -148,6 +148,15 @@ code {
   margin: 1em 0;
 }
 
+.control-list-item {
+  display: flex;
+  align-items: center;
+}
+
+.control-list-item > button:last-of-type {
+  margin-left: auto;
+}
+
 .control-item > .input .hint {
   color: lightblue;
   height: 4em;
@@ -203,10 +212,6 @@ code {
   white-space: pre-wrap !important;
 }
 
-div[class^="TabList"] {
-  margin-bottom: 0;
-}
-
 div[class^="TabsView"] {
   overflow: visible;
 }
@@ -217,7 +222,11 @@ div[class^="StyledTextHint"], div[class^="StyledCheckHint"] {
 div[class^="TabList"] {
   font-size: 1.5em;
   margin-top: 1em;
+  margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 div[class^="TabList"] > div {
   padding: 0.5em 2em;
+  flex-grow: 1;
 }

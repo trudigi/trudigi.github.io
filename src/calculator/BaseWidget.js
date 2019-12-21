@@ -1,12 +1,13 @@
 import React from 'react'
 import BaseLabels from './BaseLabels'
 import BaseMetrics from './BaseMetrics'
-import { Field, Label, Hint, Toggle } from '@zendeskgarden/react-forms';
+import { Field, Label, Hint, Toggle, Range } from '@zendeskgarden/react-forms';
 import { Icon, IconButton } from '@zendeskgarden/react-buttons';
 import { Grid, Row, Col } from '@zendeskgarden/react-grid';
-import { Field as DropField, Dropdown, Menu, Item,
-	Trigger, HeaderItem, Select } from '@zendeskgarden/react-dropdowns';
-import { Tooltip, Title } from '@zendeskgarden/react-tooltips';
+import {
+	Field as DropField, Dropdown, Menu, Item,
+	Trigger, HeaderItem, Select
+} from '@zendeskgarden/react-dropdowns';
 // import {
 // 	Accordion,
 // 	AccordionItem,
@@ -16,7 +17,6 @@ import { Tooltip, Title } from '@zendeskgarden/react-tooltips';
 // } from 'react-accessible-accordion';
 
 import { ReactComponent as TrashIcon } from '@zendeskgarden/svg-icons/src/16/trash-stroke.svg';
-import { ReactComponent as InfoIcon } from '@zendeskgarden/svg-icons/src/16/info-stroke.svg';
 import { ReactComponent as PlusIcon } from '@zendeskgarden/svg-icons/src/16/plus-fill.svg';
 
 function WidgetLabel({ name }) {
@@ -29,24 +29,6 @@ function WidgetLabel({ name }) {
 		</>
 	else
 		return <Label>{name}</Label>
-}
-
-function TooltipLabel({ data }) {
-	return (
-		<Tooltip
-			placement="end"
-			type="light"
-			size="large"
-			trigger={<IconButton link size="small">
-				<Icon>
-					<InfoIcon />
-				</Icon>
-			</IconButton>}
-		>
-			<Title>{data.name}</Title>
-			<p>{data.title}</p>
-		</Tooltip>
-	)
 }
 
 function DeleteButton({ onClick }) {
@@ -75,7 +57,7 @@ function ListAddDropdown({ event, options }) {
 	return (
 		<Dropdown sm onSelect={event} >
 			<Trigger>
-				<IconButton link size="small">
+				<IconButton primary size="small">
 					<Icon>
 						<PlusIcon />
 					</Icon>
@@ -114,6 +96,7 @@ function ListFramework({ value, event }) {
 		event({ target: { value: value, type: 'list', name: 'framework' } })
 	}
 
+
 	return (
 		<FieldRow label="framework">
 			<div className="control-list">
@@ -121,16 +104,20 @@ function ListFramework({ value, event }) {
 					value.map((k, i) => {
 						let data = BaseMetrics.frameworks[k]
 						return (
-							<div className="control-list-item" key={k}>
-								<TooltipLabel data={data} />
-								<span>{data.name}</span>
-								<DeleteButton onClick={() => deleteEvent(i)} />
-							</div>
+							<>
+								<div className="control-list-item" key={k}>
+									<div>{data.name}</div>
+									<DeleteButton onClick={() => deleteEvent(i)} />
+								</div>
+								<Hint>{data.title}</Hint>
+							</>
 						)
 					})
 				}
+				<div className="control-list-item">
+					<ListAddDropdown event={insertEvent} options={BaseMetrics.frameworks} />
+				</div>
 			</div>
-			<ListAddDropdown event={insertEvent} options={BaseMetrics.frameworks} />
 		</FieldRow>
 	)
 }
@@ -139,12 +126,16 @@ function ListMedia({ value, event }) {
 	const insertEvent = (e) => {
 		if (!value.hasOwnProperty(e)) {
 			value[e] = 1;
-			event({ target: { value: value, type: 'list', name: 'framework' } })
+			event({ target: { value: value, type: 'list', name: 'media' } })
 		}
 	}
 	const deleteEvent = (i) => {
 		delete value[i];
-		event({ target: { value: value, type: 'list', name: 'framework' } })
+		event({ target: { value: value, type: 'list', name: 'media' } })
+	}
+	const changeEvent = (i, k) => {
+		value[k] = i
+		event({ target: { value: value, type: 'list', name: 'media' } })
 	}
 
 	return (
@@ -154,16 +145,23 @@ function ListMedia({ value, event }) {
 					Object.keys(value).map((k) => {
 						let data = BaseMetrics.media[k]
 						return (
-							<div className="control-list-item" key={k}>
-								<TooltipLabel data={data} />
-								<span>{data.name}</span>
-								<DeleteButton onClick={() => deleteEvent(k)} />
-							</div>
+							<>
+								<div className="control-list-item" key={k}>
+								<div>{data.name}</div>
+									<DeleteButton onClick={() => deleteEvent(k)} />
+								</div>
+								<Hint>{data.title}</Hint>
+								<Range value={value[k]} min={1} max={30}
+								 onChange={(v) => changeEvent(v.target.value, k)} />
+								<Hint>{value[k]}&nbsp;&times;&nbsp;{data.volume}</Hint>
+							</>
 						)
 					})
 				}
+				<div className="control-list-item">
+					<ListAddDropdown event={insertEvent} options={BaseMetrics.media} />
+				</div>
 			</div>
-			<ListAddDropdown event={insertEvent} options={BaseMetrics.media} />
 		</FieldRow>
 	)
 }
@@ -252,7 +250,7 @@ function ListingPrice({ value, label }) {
 		{value.toLocaleString('id-ID', {
 			style: 'currency',
 			currency: 'IDR',
-			})}
+		})}
 	</Listing>
 }
 
