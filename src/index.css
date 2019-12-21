@@ -22,11 +22,29 @@ code {
     monospace;
 }
 
+.sale-countdown {
+  padding: 0.5em;
+  margin: 0.5em;
+  box-shadow: #500 0 0 5px;
+}
+
+.sale-countdown .countdown {
+  background: #500;
+  color: white;
+  font-size: 2em;
+  display: block;
+  padding: 0.5em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 .control-name {
   display: flex;
 }
 .control-item>* {
-  margin: 0.2em 0;
+  margin: 0.5em 0;
 }
 .control-name>*:first-child {
   margin-right: auto;
@@ -43,6 +61,15 @@ code {
 .calculator-body {
   display: flex;
   justify-content: center;
+}
+
+.listing {
+  font-size: 1.4em;
+}
+
+.listing-old {
+  text-decoration: line-through;
+  font-size: 1rem;
 }
 
 .hero-go {
@@ -182,4 +209,15 @@ div[class^="TabList"] {
 
 div[class^="TabsView"] {
   overflow: visible;
+}
+div[class^="StyledTextHint"], div[class^="StyledCheckHint"] {
+  font-size: 0.8em;
+}
+
+div[class^="TabList"] {
+  font-size: 1.5em;
+  margin-top: 1em;
+}
+div[class^="TabList"] > div {
+  padding: 0.5em 2em;
 }

@@ -12,6 +12,11 @@
   color: #111;
 }
 
+.App-header > div {
+  width: calc(100% - 5em);
+  margin: auto;
+}
+
 
 .App-calculator {
   font-size: calc(10px + 1vmin);

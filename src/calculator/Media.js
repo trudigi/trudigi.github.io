@@ -4,7 +4,6 @@ import BaseCalculator from './BaseCalculator';
 import metrics from './BaseMetrics';
 import { ListMedia, SchemeList, MediaOps, DurationListing } from './BaseWidget';
 import { Grid, Row, Col } from '@zendeskgarden/react-grid';
-import { Field } from '@zendeskgarden/react-forms';
 
 class Media extends BaseCalculator {
 	listPaket() { return Paket }
@@ -43,20 +42,11 @@ class Media extends BaseCalculator {
 						<SchemeList list={this.state.paket} event={this.setSchemeProp} />
 					</Col>
 					<Col md={6} lg={8}>
-						<Grid>
-							<Row>
-								<Col lg={6}>
-									<ListMedia value={pesanan.media} event={this.setPesananProp} name="media" />
-								</Col>
-
-								<Col lg={6}>
-								<Field className="control-item">
-									<MediaOps value={pesanan} event={this.setPesananProp} />
-									<DurationListing value={listing} />
-								</Field>
-								</Col>
-							</Row>
-						</Grid>
+						<div className="control-item">
+							<ListMedia value={pesanan.media} event={this.setPesananProp} name="media" />
+							<MediaOps value={pesanan} event={this.setPesananProp} />
+							<DurationListing value={listing} />
+						</div>
 					</Col>
 				</Row>
 			</Grid>

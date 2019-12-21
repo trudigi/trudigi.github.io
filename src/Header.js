@@ -1,27 +1,39 @@
 import React from 'react';
 import { ReactComponent as Logo } from './media/brandTrudigiLong.svg'
-import qaList from './media/qaList';
+import Countdown from 'react-countdown-now';
+import { Grid, Row, Col } from '@zendeskgarden/react-grid';
 
 function Header() {
 	return <header className="App-header">
-			<div>
+		<div>
+
 				<Logo className="App-logo" />
 				<h1>Trunojoyo Digital Freelancer</h1>
-				<p>Kami menerima pesanan project digital dari harga ekonomis hingga skala besar</p>
-			</div>
+				<div className="sale-countdown">
+					<Grid>
+						<Row>
+							<Col md={12}>
+								<h2>PROMO GRAND LAUNCHING</h2>
+							</Col>
+						</Row>
+						<Row>
+							<Col md={6}>
+								<h4>Project Digital UP TO 20%!</h4>
+								<h5>Pesan sebelum 21 Januari 2020.<br/> SK Berlaku.</h5>
+							</Col>
+							<Col md={6} className="countdown">
+								<Countdown date='2020-01-21T00:00:00'/>
+							</Col>
+						</Row>
+					</Grid>
+
+
+
+				</div>
+				</div>
+
 		</header>
 }
 
-function QA() {
-	return <div className="App-qa">
-	<h3>FAQ</h3>
-	{
-		qaList.map(x => <div className="App-qa-item" key={x.q}>
-			<div className="App-qa-q">{x.q}</div>
-			<div className="App-qa-a">{x.a}</div>
-		</div>)
-	}
-	</div>
-}
 
-export { Header, QA }
+export { Header }
