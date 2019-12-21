@@ -18,7 +18,7 @@ function Header() {
 						</Row>
 						<Row>
 							<Col md={6}>
-								<h4>Project Digital UP TO 20%!</h4>
+								<h4>Project Digital Discount UP TO 20%!</h4>
 								<h5>Pesan sebelum 21 Januari 2020.<br/> SK Berlaku.</h5>
 							</Col>
 							<Col md={6} className="countdown">

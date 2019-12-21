@@ -10,7 +10,15 @@ class Media extends BaseCalculator {
 	calculate() {
 		this.setState((state) => {
 			const { media, quick, quality } = state.pesanan;
-			let flist = Object.keys(media).map(x => metrics.media[x]).reduce((a, b) => {
+			let flist = Object.keys(media)
+			.map(x => {
+				const scheme = metrics.media[x];
+				return {
+					price: scheme.price + scheme.priceVolume * media[x],
+					duration: scheme.duration + scheme.durationVolume * media[x],
+				}
+			})
+			.reduce((a, b) => {
 				return {
 					price: a.price + b.price,
 					duration: a.duration + b.duration,

@@ -44,8 +44,8 @@ function FieldRow({ label, children }) {
 		<Field>
 			<Grid>
 				<Row>
-					<Col><WidgetLabel name={label} /></Col>
-					<Col>{children}</Col>
+					<Col md={4}><WidgetLabel name={label} /></Col>
+					<Col md={8}>{children}</Col>
 				</Row>
 			</Grid>
 		</Field>
@@ -245,12 +245,28 @@ function Listing({ children, label }) {
 	)
 }
 
+const toIDR = (v) => v.toLocaleString('id-ID', {
+	style: 'currency',
+	currency: 'IDR',
+});
+
 function ListingPrice({ value, label }) {
+	const normal = value;
+	const discount = value >= 500000 ? 0.2 : (value >= 200000 ? 0.10 : (value >= 100000 ? 0.05 : 0));
+	let display;
+	if (discount > 0) {
+		display = <><div className="listing-old">
+			{toIDR(normal)}
+			</div><div className="listing">
+			{toIDR(Math.floor(normal * (1-discount)))}
+			</div>
+			<Hint>Promo Grand Launching: <b>Diskon {discount*100}%</b></Hint>
+			</>
+	}  else {
+		display = <div className="listing">{toIDR(normal)}</div>
+	}
 	return <Listing label={label} >
-		{value.toLocaleString('id-ID', {
-			style: 'currency',
-			currency: 'IDR',
-		})}
+		{display}
 	</Listing>
 }
 
