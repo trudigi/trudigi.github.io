@@ -121,7 +121,7 @@ function ListFramework({ value, event }) {
 	)
 }
 
-function ListMedia({ value, event }) {
+function ListMedia({ value, event, quick }) {
 	const insertEvent = (e) => {
 		if (!value.hasOwnProperty(e)) {
 			value[e] = 1;
@@ -150,9 +150,12 @@ function ListMedia({ value, event }) {
 									<DeleteButton onClick={() => deleteEvent(k)} />
 								</div>
 								<Hint>{data.title}</Hint>
-								<Range value={value[k]} min={1} max={10}
+								<Range value={value[k]} min={1} max={15}
 								 onChange={(v) => changeEvent(v.target.value, k)} />
-								<Hint>{value[k]}&nbsp;&times;&nbsp;{data.volume}</Hint>
+								<Hint>
+									{`${value[k]} \xd7 ${data.volume}, selanjutnya `}
+									{`${toIDR(data.priceVolume * (quick ? 3 : 1))} per ${data.volume}`}
+								</Hint>
 							</React.Fragment>
 						)
 					})
@@ -283,8 +286,9 @@ function ListingPrice({ value, label }) {
 }
 
 function ListingDuration({ value, label }) {
+	const cap = value === 0 ? <b>(Same day)</b> : (value === 1 ? <b>(Next day)</b> : <span/>);
 	return <Listing label={label} >
-		{`${value} Hari`}
+		{`${value} Hari ` }{cap}
 	</Listing>
 }
 
@@ -305,7 +309,7 @@ function Validation({ error }) {
 	if (error) {
 		return <Message validation="error">{error}</Message>
 	} else {
-		return  <Message validation="success">OK</Message>
+		return <Message validation="success">OK</Message>
 	}
 }
 

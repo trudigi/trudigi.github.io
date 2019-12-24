@@ -47,7 +47,7 @@ class BaseCalculator extends Component {
 
 		this.setState((state) => {
 			return {
-				pesanan: { ...state.paket[i].pesanan },
+				pesanan: JSON.parse(JSON.stringify(state.paket[i].pesanan)),
 			}
 		})
 		this.calculate();
