@@ -54,10 +54,9 @@ class Software extends BaseCalculator {
 					price: [
 						flist.price,
 						dlist.price,
-						quick ? flist.price + dlist.price : 0,
 						security ? dlist.price * 2 : 0,
 						deploy ? (database === 'mega' ? 2 : 1) * 1000 * 1000 : 0
-					].reduce((a, b) => a + b, 0),
+					].reduce((a, b) => a + b, 0) * (quick ? 2 : 1),
 					duration: Math.floor((flist.duration + dlist.duration) / (quick ? 3 : 1)),
 					revision: [7, 30, 60, 90][(security ? 1 : 0) + (deploy ? (database === 'mega' ? 2 : 1) : 0)],
 				},
