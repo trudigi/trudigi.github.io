@@ -286,9 +286,8 @@ function ListingPrice({ value, label }) {
 }
 
 function ListingDuration({ value, label }) {
-	const cap = value === 0 ? <b>(Same day)</b> : (value === 1 ? <b>(Next day)</b> : <span/>);
 	return <Listing label={label} >
-		{`${value} Hari ` }{cap}
+		{value === 0 ? <b>{'< 24 Jam'}</b> : (value === 1 ? <b>{'< 48 Jam'}</b> : <span>{value+" Hari"}</span>)}
 	</Listing>
 }
 

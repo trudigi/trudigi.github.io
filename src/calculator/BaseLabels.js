@@ -2,7 +2,7 @@
 const props = {
 	framework: {
 		name: "Framework",
-		highlight: "Jenis Aplikasi yang ingin dibuat",
+		highlight: "Komponen aplikasi yang ingin digunakan",
 	},
 	database: {
 		name: "Database",
@@ -30,7 +30,7 @@ const props = {
 	},
 	security: {
 		name: "Audit Keamanan",
-		highlight: "Butuh revisi lama agar software bebas dari bug dan pembobolan hacker?",
+		highlight: "Butuh jaminan agar software bebas dari bug dan pembobolan hacker?",
 	},
 	quality: {
 		name: "High Quality",
@@ -38,7 +38,7 @@ const props = {
 	},
 	deploy: {
 		name: "Asistensi Pemasangan",
-		highlight: "Butuh bantuan untuk distribusi aplikasi dan migrasi data?",
+		highlight: "Butuh bantuan untuk hosting, distribusi dan migrasi data?",
 	}
 }
 

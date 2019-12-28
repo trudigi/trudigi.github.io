@@ -1,19 +1,39 @@
 [
 	{
-		"nama": "Front Website",
+		"nama": "Front Web",
 		"deskripsi": "Halaman CV atau Portofolio",
 		"pesanan": {
-			"framework": ["static"],
+			"framework": ["bootstrap"],
 			"database": "none",
 			"quick": false,
 			"security": false,
 			"deploy": false
 		}
 	}, {
-		"nama": "E-Commerce",
-		"deskripsi": "Website E-commerce untuk Usaha Lokal",
+		"nama": "Arsip",
+		"deskripsi": "Aplikasi untuk menata arsip",
 		"pesanan": {
-			"framework": ["ci"],
+			"framework": ["pyqt"],
+			"database": "mini",
+			"quick": false,
+			"security": false,
+			"deploy": false
+		}
+	}, {
+		"nama": "Data Science",
+		"deskripsi": "Aplikasi untuk analisa berbasis A.I.",
+		"pesanan": {
+			"framework": ["bootstrap","ci", "python"],
+			"database": "regular",
+			"quick": false,
+			"security": false,
+			"deploy": false
+		}
+	}, {
+		"nama": "Lifestyle",
+		"deskripsi": "Aplikasi untuk pengguna Mobile",
+		"pesanan": {
+			"framework": ["express","flutter"],
 			"database": "regular",
 			"quick": false,
 			"security": true,
@@ -23,51 +43,41 @@
 		"nama": "Administrasi",
 		"deskripsi": "Website untuk otorisasi sistem",
 		"pesanan": {
-			"framework": ["ci"],
+			"framework": ["bootstrap","ci"],
 			"database": "complex",
+			"quick": false,
+			"security": true,
+			"deploy": false
+		}
+	}, {
+		"nama": "Kantor",
+		"deskripsi": "Aplikasi untuk ukuran jaringan kantor",
+		"pesanan": {
+			"framework": ["bootstrap","ci", "javafx", "manual"],
+			"database": "complex",
+			"quick": false,
+			"security": true,
+			"deploy": false
+		}
+	},  {
+		"nama": "Semua Platform",
+		"deskripsi": "Aplikasi modern terjangkau untuk semua platform",
+		"pesanan": {
+			"framework": ["react", "express", "electron", "ionic"],
+			"database": "complex",
+			"quick": false,
+			"security": true,
+			"deploy": false
+		}
+	},  {
+		"nama": "Distruptive IT",
+		"deskripsi": "Aplikasi distruptif untuk solusi industri C2C",
+		"pesanan": {
+			"framework": ["react", "laravel", "ionic", "media", "rest", "livechat"],
+			"database": "mega",
 			"quick": false,
 			"security": true,
 			"deploy": true
-		}
-	}, {
-		"nama": "Aplikasi PC",
-		"deskripsi": "Aplikasi untuk proses arsip",
-		"pesanan": {
-			"framework": ["pyqt"],
-			"database": "mini",
-			"quick": false,
-			"security": false,
-			"deploy": false
-		}
-	}, {
-		"nama": "Aplikasi Kantor",
-		"deskripsi": "Aplikasi untuk jaringan kantor",
-		"pesanan": {
-			"framework": ["ci", "javafx"],
-			"database": "complex",
-			"quick": false,
-			"security": true,
-			"deploy": true
-		}
-	}, {
-		"nama": "Data Science",
-		"deskripsi": "Aplikasi untuk pengolahan data training",
-		"pesanan": {
-			"framework": ["ci", "python"],
-			"database": "regular",
-			"quick": false,
-			"security": false,
-			"deploy": false
-		}
-	}, {
-		"nama": "All-in-One Framework",
-		"deskripsi": "Aplikasi modern berfungsi untuk semua platform",
-		"pesanan": {
-			"framework": ["express", "electron", "ionic"],
-			"database": "complex",
-			"quick": false,
-			"security": true,
-			"deploy": false
 		}
 	}
 ]
