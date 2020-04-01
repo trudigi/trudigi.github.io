@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6bfa2b5f.chunk.css",
+    "main.js": "/static/js/main.8f9166de.chunk.js",
+    "main.js.map": "/static/js/main.8f9166de.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.4892ce16.js",
+    "runtime-main.js.map": "/static/js/runtime-main.4892ce16.js.map",
+    "static/css/2.9c8fcd15.chunk.css": "/static/css/2.9c8fcd15.chunk.css",
+    "static/js/2.2a3f26ca.chunk.js": "/static/js/2.2a3f26ca.chunk.js",
+    "static/js/2.2a3f26ca.chunk.js.map": "/static/js/2.2a3f26ca.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.21ea6f4f5563e51abee34eac4e85487d.js": "/precache-manifest.21ea6f4f5563e51abee34eac4e85487d.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.9c8fcd15.chunk.css.map": "/static/css/2.9c8fcd15.chunk.css.map",
+    "static/css/main.6bfa2b5f.chunk.css.map": "/static/css/main.6bfa2b5f.chunk.css.map",
+    "static/media/brandTrudigiLong.d6f6bf54.svg": "/static/media/brandTrudigiLong.d6f6bf54.svg",
+    "static/media/plus-fill.svg": "/static/media/plus-fill.d227721f.svg",
+    "static/media/trash-stroke.svg": "/static/media/trash-stroke.e91672ed.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4892ce16.js",
+    "static/css/2.9c8fcd15.chunk.css",
+    "static/js/2.2a3f26ca.chunk.js",
+    "static/css/main.6bfa2b5f.chunk.css",
+    "static/js/main.8f9166de.chunk.js"
+  ]
+}
